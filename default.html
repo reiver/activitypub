@@ -31,19 +31,17 @@
 	<section>
 		<h1>Example</h1>
 		<p>
-			A simple example of the JSON-LD version of <strong>ActivityPub</strong> <code>Note</code> is:
+			Here is a simple example of the JSON-LD version of <strong>ActivityPub</strong> <code>Note</code> is:
 		</p>
 		<figure>
 			<pre><code>
 {
   "@context": "https://www.w3.org/ns/activitystreams",
   "id": "https://example.com/announce/019eb542-aeca-7a9a-872e-45a0f6c24e4b",
-  "type": "Announce",
+  "type": "Note",
   "actor": "https://example.com/user/joeblow",
-  "cc": "https://mastodon.social/users/reiver",
-  "object": "https://mastodon.social/users/reiver/statuses/109280772735288142",
+  "content": "Hello world!",
   "published": "2026-05-04T17:27:59.585Z",
-  "summary": "joeblow shared \"a(n) Note\"",
   "to": [
     "https://example.com/user/joeblow/followers",
     "as:Public"
@@ -53,10 +51,41 @@
 			</code></pre>
 		</figure>
 		<p>
-			Here is an example of the RDFa version of <strong>ActivityPub</strong>:
+			Here is a simple example of the RDFa version of <strong>ActivityPub</strong>:
 		</p>
 		<figure>
 			<pre><code>
+&lt;!DOCTYPE html&lt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+  vocab="https://www.w3.org/ns/activitystreams#"
+  prefix="as: https://www.w3.org/ns/activitystreams#"
+  resource="https://example.com/announce/019eb542-aeca-7a9a-872e-45a0f6c24e4b"
+  typeof="Note"
+&gt;
+  &lt;head&gt;
+      &lt;link property="to" href="https://example.com/user/joeblow/followers" /&gt;
+      &lt;link property="to" href="as:Public" /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+
+      &lt;article&gt;
+        &lt;div property="content"&gt;
+		Hello world!
+        &lt;/div&gt;
+
+        &lt;footer&gt;
+          &lt;address&gt;
+		Written by &lt;a property="actor" href="https://example.com/user/joeblow"&gt;joeblow&lt;/a&gt;.
+          &lt;/address&gt;
+          &lt;p&gt;Published: &lt;time property="published" datetime="2026-05-04T17:27:59.585Z"&gt;May 4, 2026&lt;/time&gt;&lt;/p&gt;
+          &lt;p&gt;Updated: &lt;time property="updated" datetime="2026-05-04T17:27:59.585Z"&gt;May 4, 2026&lt;/time&gt;&lt;/p&gt;
+        &lt;/footer&gt;
+      &lt;/article&gt;
+
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 			</code></pre>
 		</figure>
 		<p>
