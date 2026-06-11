@@ -29,6 +29,46 @@
 		A technologist would call a <em>computer language</em> such as <strong>ActivityPub</strong> a <em>protocol</em>.
 	</p>
 	<section>
+		<h1>Example</h1>
+		<p>
+			Here is an example of the JSON-LD version of <strong>ActivityPub</strong>:
+		</p>
+		<figure>
+			<pre><code>
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    "https://w3id.org/fep/5711"
+  ],
+  "id": "https://tags.pub/user/_followback/outbox",
+  "type": "OrderedCollection",
+  "outboxOf": "https://tags.pub/user/_followback",
+  "attributedTo": "https://tags.pub/user/_followback",
+  "first": "https://tags.pub/user/_followback/outbox/59",
+  "last": "https://tags.pub/user/_followback/outbox/1",
+  "published": "2026-03-16T21:32:53.191Z",
+  "summaryMap": {
+    "en": "The outbox collection for user _followback"
+  },
+  "to": "as:Public",
+  "totalItems": 4152,
+  "updated": "2026-06-10T18:13:38.118Z"
+}
+			</code></pre>
+		</figure>
+		<p>
+			Here is an example of the RDFa version of <strong>ActivityPub</strong>:
+		</p>
+		<figure>
+			<pre><code>
+			</code></pre>
+		</figure>
+		<p>
+			Note that expressing <strong>ActivityPub</strong> as JSON-LD is the most common way of expressing <strong>ActivityPub</strong>.
+			Expressing <strong>ActivityPub</strong> as RDFa exists, but is not common.
+		</p>
+	</section>
+	<section>
 		<h1>Index</h1>
 		<section>
 			<h1>A</h1>
