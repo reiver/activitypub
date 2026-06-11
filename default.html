@@ -31,28 +31,24 @@
 	<section>
 		<h1>Example</h1>
 		<p>
-			Here is an example of the JSON-LD version of <strong>ActivityPub</strong>:
+			A simple example of the JSON-LD version of <strong>ActivityPub</strong> <code>Note</code> is:
 		</p>
 		<figure>
 			<pre><code>
 {
-  "@context": [
-    "https://www.w3.org/ns/activitystreams",
-    "https://w3id.org/fep/5711"
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "https://example.com/announce/019eb542-aeca-7a9a-872e-45a0f6c24e4b",
+  "type": "Announce",
+  "actor": "https://example.com/user/joeblow",
+  "cc": "https://mastodon.social/users/reiver",
+  "object": "https://mastodon.social/users/reiver/statuses/109280772735288142",
+  "published": "2026-05-04T17:27:59.585Z",
+  "summary": "joeblow shared \"a(n) Note\"",
+  "to": [
+    "https://example.com/user/joeblow/followers",
+    "as:Public"
   ],
-  "id": "https://tags.pub/user/_followback/outbox",
-  "type": "OrderedCollection",
-  "outboxOf": "https://tags.pub/user/_followback",
-  "attributedTo": "https://tags.pub/user/_followback",
-  "first": "https://tags.pub/user/_followback/outbox/59",
-  "last": "https://tags.pub/user/_followback/outbox/1",
-  "published": "2026-03-16T21:32:53.191Z",
-  "summaryMap": {
-    "en": "The outbox collection for user _followback"
-  },
-  "to": "as:Public",
-  "totalItems": 4152,
-  "updated": "2026-06-10T18:13:38.118Z"
+  "updated": "2026-05-04T17:27:59.585Z"
 }
 			</code></pre>
 		</figure>
