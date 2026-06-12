@@ -119,11 +119,32 @@
 			<code>width</code>.
 		</p>
 		<p>
-			Many fields are options.
-			So one should think of the fields of an <strong>ActivityPub</strong> types as the fields it <em>could</em> have, rather than what it <em>must</em> have.
+			Many fields are optional.
+			So, one should probably think of the fields of an <strong>ActivityPub</strong> types as the fields it <em>could</em> have, rather than what it <em>must</em> have.
 		</p>
 		<p>
-			The types are:
+			So, for example, a simple <strong>ActivityPub</strong> <code>Link</code> expressed as JSON-LD could be:
+		</p>
+		<figure>
+			<pre><code>
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "https://example.com/announce/019eb542-aeca-7a9a-872e-45a0f6c24e4b",
+  "type": "Link",
+  "rel": "home-page",
+  "href": "http://example.com/~joeblow"
+}
+			</code></pre>
+		</figure>
+		<p>
+			And, for completeness, expressed as RDFa could be:
+		</p>
+		<figure>
+			<pre><code>
+			</code></pre>
+		</figure>
+		<p>
+			The <strong>ActivityPub</strong> types are:
 		</p>
 		<ul>
 			<li>
