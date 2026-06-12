@@ -102,6 +102,27 @@
 		<h1>ActivityPub Types</h1>
 		<p>
 			Part of <strong>ActivityPub</strong> is a hierarchical set of types.
+			Types are for the most part defined by the fields their have.
+		</p>
+		<p>
+			For example, the <strong>ActivityPub</strong> <code>Link</code> type has the following fields:
+			<code>id</code>,
+			<code>type</code>,
+			<code>height</code>,
+			<code>href</code>,
+			<code>hreflang</code>,
+			<code>name</code>,
+			<code>nameMap</code>,
+			<code>mediaType</code>,
+			<code>preview</code>,
+			<code>rel</code>,
+			<code>width</code>.
+		</p>
+		<p>
+			Many fields are options.
+			So one should think of the fields of an <strong>ActivityPub</strong> types as the fields it <em>could</em> have, rather than what it <em>must</em> have.
+		</p>
+		<p>
 			The types are:
 		</p>
 		<ul>
@@ -113,6 +134,37 @@
 					</li>
 					<li>
 						<a href="type/object/"><code>Object</code></a>
+						<ul>
+							<li>
+								<a href="type/activity/"><code>Activity</code></a>
+								<ul>
+									<li>
+										<a href="type/intransitiveactivity/"><code>IntransitiveActivity</code></a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="type/collection/"><code>Collection</code></a>
+								<ul>
+									<li>
+										<a href="type/collectionpage/"><code>CollectionPage</code></a>
+										<ul>
+											<li>
+												<a href="type/orderedcollectionpage/">OrderedCollectionPage</a> (appears more than once due to multiple inheritance)
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="type/orderedcollection/"><code>OrderedCollection</code></a>
+										<ul>
+											<li>
+												<a href="type/orderedcollectionpage/">OrderedCollectionPage</a> (appears more than once due to multiple inheritance)
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</li>
