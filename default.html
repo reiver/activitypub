@@ -129,7 +129,6 @@
 			<pre><code>
 {
   "@context": "https://www.w3.org/ns/activitystreams",
-  "id": "https://example.com/announce/019eb542-aeca-7a9a-872e-45a0f6c24e4b",
   "type": "Link",
   "rel": "home-page",
   "href": "http://example.com/~joeblow"
@@ -141,6 +140,15 @@
 		</p>
 		<figure>
 			<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+  vocab="https://www.w3.org/ns/activitystreams#"
+  prefix="as: https://www.w3.org/ns/activitystreams#"
+&gt;
+
+        &lt;span typeof="as:Link"&gt;&lt;a property="as:rel" content="home-page" href="http://example.com/~joeblow"&gt;Home Page&lt;/a&gt;&lt;/span&gt;
+
+&lt;/html&gt;
 			</code></pre>
 		</figure>
 		<p>
