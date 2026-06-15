@@ -83,6 +83,58 @@
 &lt;link href="http://example.com/~jowblow/avatar.png" type="image/png" hreflang="en" /&gt;
 			</code></pre>
 		</figure>
+		<p>
+			The following table shows where the <strong>ActivityPub <code>Link</code> type</strong> an the <strong>HTML <code>&lt;link /&gt;</code> element</strong> are the same:
+		</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Activity <code>Link</code> property</th>
+					<th>HTML <code>&lt;link&gt;</code> attribute</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>href</code></td>
+					<td><code>href</code></td>
+					<td>
+						The target <abbr title="uniform resource locator">URL</abbr>/<abbr title="Uniform Resource Identifier">URI</abbr>/<abbr title="internationalized resource identifier">IRI</abbr> of the linked resource.
+					</td>
+				</tr>
+				<tr>
+					<td><code>hreflang</code></td>
+					<td><code>hreflang</code></td>
+					<td>
+						The language of the linked resource.
+						(Ex: <code>en</code> (English), <code>fa</code> (Persian/Farsi), <code>kr</code> (Korean), etc.)
+					</td>
+				</tr>
+				<tr>
+					<td><code>mediaType</code></td>
+					<td><code>type</code></td>
+					<td>
+						The MIME media type of the referenced resource.
+						(Ex: <code>application/activity+json</code>, <code>image/png</code>, <code>text/html</code>, etc.)
+					</td>
+				</tr>
+				<tr>
+					<td><code>name</code> / <code>nameMap</code></td>
+					<td><code>title</code></td>
+					<td>
+						A human-readable label or title for the target link.
+					</td>
+				</tr>
+				<tr>
+					<td><code>rel</code></td>
+					<td><code>rel</code></td>
+					<td>
+						The relationship type.
+						(Ex: <code>alternative</code>, <code>canonical</code>, <code>license</code>, <code>me</code>, etc.)
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</section>
 	<section>
 		<h1>Example</h1>
