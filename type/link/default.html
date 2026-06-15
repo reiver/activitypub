@@ -29,6 +29,49 @@
 			by <a href="https://reiver.link/">Charles Iliya Krempeaux</a>
 		</p>
 	</header>
+	<p>
+		An <strong>ActivityPub <code>Link</code> type</strong> lets you point to something using a <abbr title="uniform resource locator">URL</abbr>/<abbr title="Uniform Resource Identifier">URI</abbr>/<abbr title="internationalized resource identifier">IRI</abbr> and optionally include certain particular meta-data..
+		For example, this JSON-LD code has an <strong>ActivityPub <code>Link</code></strong> in it:
+	</p>
+	<figure>
+		<pre><code class="json-ld">
+{
+  "type": "Link",
+  "href": "http://example.com/note/1781517921"
+}
+		</code></pre>
+	</figure>
+	<p>
+		An <strong>ActivityPub <code>Link</code></strong> is similar to <strong>HTML <code>&lt;link /&gt;</code> element</strong> and to a lesser degree similar to an <strong>HTML <code>&lt;a&gt;</code> element</strong>.
+		So, the previous ActivityPub JSON-LD code is similar to the following HTML code:
+	</p>
+	<figure>
+		<pre><code class="html">
+&lt;link href="http://example.com/note/1781517921" /&gt;
+		</code></pre>
+	</figure>
+	<section>
+		<h1>Example</h1>
+		<p>
+			A more complete example of the <strong>ActivityPub <code>Link</code> type</strong> being used is:
+		</p>
+		<figure>
+			<pre><code class="json-ld">
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+
+  "attachment": [
+    {
+      "type": "Link",
+      "href": "http://example.com/note/1781517921",
+      "mediaType": "text/html",
+      "name": "Hello World!"
+    }
+  ]
+}
+			</code></pre>
+		</figure>
+	</section>
 	<footer>
 		<include src="../../author.html" />
 		<include src="../../license.html" />
