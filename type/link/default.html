@@ -31,7 +31,7 @@
 	</header>
 	<p>
 		An <strong>ActivityPub <code>Link</code> type</strong> lets you point to something using a <abbr title="uniform resource locator">URL</abbr>/<abbr title="Uniform Resource Identifier">URI</abbr>/<abbr title="internationalized resource identifier">IRI</abbr> and optionally include certain particular meta-data..
-		For example, this JSON-LD code has an <strong>ActivityPub <code>Link</code></strong> in it:
+		For example, this JSON-LD code has a simple <strong>ActivityPub <code>Link</code></strong> in it:
 	</p>
 	<figure>
 		<pre><code class="json-ld">
@@ -40,16 +40,50 @@
   "href": "http://example.com/note/1781517921"
 }
 		</code></pre>
+		<figcaption>
+			figure 1:
+			a simple <strong>ActivityPub <code>Link</code></strong>
+		</figcaption>
 	</figure>
 	<p>
-		An <strong>ActivityPub <code>Link</code></strong> is similar to <strong>HTML <code>&lt;link /&gt;</code> element</strong> and to a lesser degree similar to an <strong>HTML <code>&lt;a&gt;</code> element</strong>.
-		So, the previous ActivityPub JSON-LD code is similar to the following HTML code:
+		And, here is an example of an <strong>ActivityPub <code>Link</code></strong> with some meta-data:
 	</p>
 	<figure>
-		<pre><code class="html">
-&lt;link href="http://example.com/note/1781517921" /&gt;
+		<pre><code class="json-ld">
+{
+  "type": "Link",
+  "href": "http://example.com/~jowblow/avatar.png",
+  "mediaType": "image/png",
+  "hreflang": "en",
+  "width": 400,
+  "height": 400
+}
 		</code></pre>
+		<figcaption>
+			figure 2:
+			an <strong>ActivityPub <code>Link</code></strong> with soe meta-data
+		</figcaption>
 	</figure>
+	<section>
+		<h1>Activity <type>"type":"Link,"</code> compared to HTML <code>&lt;link/&gt;</code></h1>
+		<p>
+			An <strong>ActivityPub <code>Link</code></strong> is similar to <strong>HTML <code>&lt;link /&gt;</code> element</strong> and to a lesser degree similar to an <strong>HTML <code>&lt;a&gt;</code> element</strong>.
+			So, the ActivityPub JSON-LD code in <em>figure 1</em> is similar to the following HTML code:
+		</p>
+		<figure>
+			<pre><code class="html">
+&lt;link href="http://example.com/note/1781517921" /&gt;
+			</code></pre>
+		</figure>
+		<p>
+			And, the ActivityPub JSON-LD code in <em>figure 2</em> is similar to the following HTML code:
+		</p>
+		<figure>
+			<pre><code class="html">
+&lt;link href="http://example.com/~jowblow/avatar.png" type="image/png" hreflang="en" width="400" height="400" /&gt;
+			</code></pre>
+		</figure>
+	</section>
 	<section>
 		<h1>Example</h1>
 		<p>
@@ -80,4 +114,5 @@
 </main>
 </body>
 </html>
+
 
