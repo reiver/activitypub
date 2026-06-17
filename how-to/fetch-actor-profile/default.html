@@ -152,13 +152,13 @@
 		</figure>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
-		<h1 property="name">WebFinger URL Path</h1>
+		<h1 property="name">WebFinger Path</h1>
 		<p>
-			<strong>Step 3</strong> is constructing is <strong>WebFinger URL path</strong>.
-			The <strong>WebFinger URL path</strong> will contain the <strong>acct-URI</strong> you got from <em>step 2</em>.
+			<strong>Step 3</strong> is constructing is <strong>WebFinger path</strong>.
+			The <strong>WebFinger path</strong> will contain the <strong>acct-URI</strong> you got from <em>step 2</em>.
 		</p>
 		<p>
-			The form the <strong>WebFinger URL path</strong> takes is:
+			The form the <strong>WebFinger path</strong> takes is:
 		</p>
 		<figure>
 			<pre><code>
@@ -199,9 +199,16 @@
 				</tr>
 			</tbody>
 		</table>
+		<p>
+			Note that you should <a href="/url-encode/">URL encode</a> the <strong>acct-URI</strong> <em>before</em> putting it into the <strong>WebFinger path</strong>.
+		</p>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
 		<h1 property="name">WebFinger HTTP URL</h1>
+		<p>
+			<strong>Step 4</strong> is constructing is <strong>WebFinger HTTP URL</strong>.
+			The <strong>WebFinger HTTP URL</strong> will contain the <strong>WebFinger path</strong> you got from <em>step 3</em>.
+		</p>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
 		<h1 property="name">WebFinger HTTP Request</h1>
