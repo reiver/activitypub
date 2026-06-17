@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" vocab="https://schema.org/" typeof="TechArticle" class="article">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" vocab="https://schema.org/" typeof="HowTo" class="article">
 <head>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="/text-readability/readmode.css" />
@@ -20,7 +20,7 @@
 <article>
 	<header>
 		<hgroup>
-			<h1 property="headline">How to Fetch an ActivityPub Actor Profile: A Developer's Guide</h1>
+			<h1 property="name">How to Fetch an ActivityPub Actor Profile: A Developer's Guide</h1>
 			<p>
 				Fediverse ID → acct-URI → WebFinger → "Accept: application/activity+json" + actor URL
 			</p>
@@ -31,6 +31,7 @@
 	</header>
 	<p>
 		How do you get a Fediverse user's profile information using code‽
+		How (as as ActivityPub developers would say) do you get an ActivityPub actor's profile information?
 		I.e., how do you go from this:
 	</p>
 	<figure>
@@ -39,7 +40,7 @@
 		</code></pre>
 	</figure>
 	<p>
-		To the information in this this:
+		To the information in this:
 	</p>
 	<figure>
 		<img src="reiver-mastodon-social-20260617.png" />
@@ -61,8 +62,8 @@
 	<p>
 		Let's look at how this all works.
 	</p>
-	<section>
-		<h1>Fediverse ID</h1>
+	<section property="step" typeof="HowToStep">
+		<h1 property="name">Fediverse ID</h1>
 		<p>
 			It starts with a <strong>Fediverse ID</strong>.
 		</p>
@@ -87,23 +88,23 @@
 			And, that is probably a good way to thinking about it.
 		</p>
 	</section>
-	<section>
-		<h1>acct-URI</h1>
+	<section property="step" typeof="HowToStep">
+		<h1 property="name">acct-URI</h1>
 	</section>
-	<section>
-		<h1>WebFinger</h1>
+	<section propertyy="step" typeof=="HowToStep">
+		<h1 property="name">WebFinger</h1>
 	</section>
-	<section>
-		<h1>Actor URI</h1>
+	<section property="step" typeof="HowToStep">
+		<h1 property="name">Actor URI</h1>
 	</section>
-	<section>
-		<h1>Actor URI HTTP Request</h1>
+	<section property="step" typeof="HowToStep">
+		<h1 property="name">Actor URI HTTP Request</h1>
 		<section>
 			<h1>curl</h1>
 		</section>
 	</section>
-	<section>
-		<h1>Actor JSON-LD</h1>
+	<section property="step" typeof="HowToStep">
+		<h1 property="name">Actor JSON-LD</h1>
 	</section>
 	<footer>
 		<include src="../../author.html" />
