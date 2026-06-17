@@ -152,6 +152,55 @@
 		</figure>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
+		<h1 property="name">WebFinger URL Path</h1>
+		<p>
+			<strong>Step 3</strong> is constructing is <strong>WebFinger URL path</strong>.
+			The <strong>WebFinger URL path</strong> will contain the <strong>acct-URI</strong> you got from <em>step 2</em>.
+		</p>
+		<p>
+			The form the <strong>WebFinger URL path</strong> takes is:
+		</p>
+		<figure>
+			<pre><code>
+/.well-known/webfinger?resource={accturi}
+			</code></pre>
+		</figure>
+		<p>
+			If we continue with out previous example, we get:
+		</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Fediverse ID</th>
+					<th>acct-URI</th>
+					<th>WebFinger Path</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>@joeblow@example.com</code></td>
+					<td><code>acct:joeblow@example.com</code></td>
+					<td><code>/.well-known/webfinger?resource=acct:joeblow@example.com</code></td>
+				</tr>
+				<tr>
+					<td><code>@reiver@mastodon.social</code></td>
+					<td><code>acct:reiver@mastodon.social</code></td>
+					<td><code>/.well-known/webfinger?resource=acct:reiver@mastodon.social</code></td>
+				</tr>
+				<tr>
+					<td><code>@dansup@pixelfed.social</code></td>
+					<td><code>acct:dansup@pixelfed.social</code></td>
+					<td><code>/.well-known/webfinger?resource=acct:dansup@pixelfed.social</code></td>
+				</tr>
+				<tr>
+					<td><code>@bahmankas@reiver.link</code></td>
+					<td><code>acct:bahmankas@reiver.link</code></td>
+					<td><code>/.well-known/webfinger?resource=acct:bahmankas@reiver.link</code></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<section propertyy="step" typeof=="HowToStep">
 		<h1 property="name">WebFinger HTTP URL</h1>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
