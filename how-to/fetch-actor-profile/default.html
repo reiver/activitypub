@@ -65,7 +65,8 @@
 	<section property="step" typeof="HowToStep">
 		<h1 property="name">Fediverse ID</h1>
 		<p>
-			It starts with a <strong>Fediverse ID</strong>.
+		<p>
+			It starts with a <strong>Fediverse ID</strong> — this is <strong>step 1</strong>.
 		</p>
 		<p>
 			A <strong>Fediverse ID</strong> (also sometimes called a <strong>Fediverse address</strong>) looks like these:
@@ -96,6 +97,42 @@
 	</section>
 	<section property="step" typeof="HowToStep">
 		<h1 property="name">acct-URI</h1>
+		<p>
+			<strong>Step 2</strong> is turn the Fediverse ID (you got in <em>step 1</em>) into an acct-URI.
+		</p>
+		<p>
+			It is actually pretty easy to do.
+			Here are some examples.
+		</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Fediverse ID</th>
+					<th>acct-URI</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>@joeblow@example.com</code></td>
+					<td><code>acct:joeblow@example.com</code></td>
+				</tr>
+				<tr>
+					<td><code>@reiver@mastodon.social</code></td>
+					<td><code>acct:reiver@mastodon.social</code></td>
+				</tr>
+				<tr>
+					<td><code>@dansup@pixelfed.social</code></td>
+					<td><code>acct:dansup@pixelfed.social</code></td>
+				</tr>
+				<tr>
+					<td><code>@bahmankas@reiver.link</code></td>
+					<td><code>acct:bahmankas@reiver.link</code></td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			Notice that, in these examples, the only thing that changes in transforming a <strong>Fediverse ID</strong> to an <strong>acct-URI</strong> as change the at-sign (“@”) at the beginning to “acct:”.
+		</p>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
 		<h1 property="name">WebFinger</h1>
