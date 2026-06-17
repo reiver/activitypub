@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" vocab="https://schema.org/" typeof="TechArticle" class="article">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/text-readability/readmode.css" />
+<title>How to Fetch an ActivityPub Actor Profile: A Developer's Guide</title>
+<meta name="author" content="Charles Iliya Krempeaux" />
+</head>
+<body>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+	<ol>
+		<li><a href="/">Home</a></li>
+		<li><a href="../../">ActivityPub</a></li>
+		<li><a href="../">How To</a></li>
+		<li><a href="./" aria-current="page"></a></li>
+	</ol>
+</nav>
+
+<main>
+<article>
+	<header>
+		<hgroup>
+			<h1 property="headline">How to Fetch an ActivityPub Actor Profile: A Developer's Guide</h1>
+			<p>
+				Fediverse ID → acct-URI → WebFinger → "Accept: application/activity+json" + actor URL
+			</p>
+		</hgroup>
+		<p>
+			by <a href="https://reiver.link/">Charles Iliya Krempeaux</a>
+		</p>
+	</header>
+	<p>
+		How do you get a Fediverse user's profile information using code‽
+		I.e., how do you go from this:
+	</p>
+	<figure>
+		<pre><code>
+@reiver@mastodon.social
+		</code></pre>
+	</figure>
+	<p>
+		To the information in this this:
+	</p>
+	<figure>
+		<img src="reiver-mastodon-social-20260617.png" />
+		<figcaption>
+			Screen-Shot of <code>@reiver@mastodon.social</code> profile from the <code>mastodon.social</code> web-site application.
+		</figcaption>
+	</figure>
+	<p>
+		With a centralized platform, there is a single API.
+		But, the Fediverse (including Mastodon, Misskey, PeerTube, Pixelfed, and others) is made up of a set of distributed servers.
+		There isn't a single API.
+		There are many APIs.
+		Which means that there is no single universal “user lookup endpoint”.
+		Each Fedivese server has its own APIs.
+	</p>
+	<p>
+		Luckily, these <em>many APIs</em> look similar to each other — and, these <em>many APIs</em> all speak ActivityPub, WebFinger, etc.
+	</p>
+	<p>
+		Let's look at how this all works.
+	</p>
+	<section>
+		<h1>Fediverse ID</h1>
+		<p>
+			It starts with a <strong>Fediverse ID</strong>.
+		</p>
+		<p>
+			A <strong>Fediverse ID</strong> (also sometimes called a <strong>Fediverse address</strong>) looks like these:
+		</p>
+		<ul>
+			<li><code>@joeblow@example.com</code></li>
+			<li><code>@reiver@mastodon.social</code></li>
+			<li><code>@dansup@pixelfed.social</code></li>
+			<li><code>@bahmankas@reiver.link</code></li>
+		</ul>
+		<p>
+			This is what you see in various Fediverse applications.
+			Whether these are mobile apps, or web-based applications.
+		</p>
+		<p>
+			You also saw a Fediverse ID in the previous screen-shot.
+		</p>
+		<p>
+			You many be thinking something like: <em>these look like an e-mail address with an extra at-sign ("@") at the beginning</em>.
+			And, that is probably a good way to thinking about it.
+		</p>
+	</section>
+	<section>
+		<h1>acct-URI</h1>
+	</section>
+	<section>
+		<h1>WebFinger</h1>
+	</section>
+	<section>
+		<h1>Actor URI</h1>
+	</section>
+	<section>
+		<h1>Actor URI HTTP Request</h1>
+		<section>
+			<h1>curl</h1>
+		</section>
+	</section>
+	<section>
+		<h1>Actor JSON-LD</h1>
+	</section>
+	<footer>
+		<include src="../../author.html" />
+		<include src="../../license.html" />
+	</footer>
+</article>
+</main>
+</body>
+</html>
