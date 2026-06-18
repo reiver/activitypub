@@ -69,7 +69,7 @@
 		<h1>Step <span property="position">1</span>: <span property="name">Fediverse ID</span></h1>
 		<p>
 		<p>
-			It starts with a <strong>Fediverse ID</strong> — this is <strong>step 1</strong>.
+			It starts with a <strong>Fediverse ID</strong>.
 		</p>
 		<p>
 			A <strong>Fediverse ID</strong> (also sometimes called a <strong>Fediverse address</strong>) looks like these:
@@ -167,7 +167,7 @@
 			(Where <code>{acctURI}</code> gets replaced by the URL-encoded version of the <strong>acct-URI</strong>.)
 		</p>
 		<p>
-			If we continue with out previous example, we get:
+			If we continue with our previous examples, we get:
 		</p>
 		<table>
 			<thead>
@@ -205,15 +205,12 @@
 		</p>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
-		<hgroup>
-			<h1 property="name">WebFinger Host</h1>
-			<p>step 4</p>
-		</hgroup>
+		<h1>Step <span property="position">4</span>: <span property="name">WebFinger Host</span></h1>
 		<p>
-			<strong>Step 4</strong> is getting the <strong>host</strong> for the <strong>WebFinger HTTP URL</strong> we will eventually construct (in <em>step 5</em>).
+			Now we need to infer the <strong>host</strong> for the <strong>WebFinger HTTP URL</strong> we will eventually construct (in <em>step 5</em>).
 		</p>
 		<p>
-			If we continue with out previous example, we get:
+			If we continue with our previous examples, we get:
 		</p>
 		<table>
 			<thead>
@@ -248,20 +245,107 @@
 		</table>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
-		<hgroup>
-			<h1 property="name">WebFinger HTTP URL</h1>
-			<p>step 5</p>
-		</hgroup>
+		<h1>Step <span property="position">5</span>: <span property="name">WebFinger HTTP URL</span></h1>
 		<p>
-			<strong>Step 5</strong> is constructing is <strong>WebFinger HTTP URL</strong>.
-			The <strong>WebFinger HTTP URL</strong> will contain the <strong>WebFinger path</strong> you got from <em>step 3</em>.
+			Now we construct is <strong>WebFinger HTTP URL</strong>.
+			The <strong>WebFinger HTTP URL</strong> will contain the <strong>WebFinger path</strong> you got from <em>step 3</em> and the <sttrong>WebFinger host</strong> you got from <em>step 4</em>.
 		</p>
+		<p>
+			The form the <strong>WebFinger path</strong> takes is:
+		</p>
+		<figure>
+			<pre><code>
+https://{host}{path}
+			</code></pre>
+		</figure>
+		<p>
+			So, if <code>host</code> is:
+		</p>
+		<figure>
+			<pre><code>
+mastodon.social
+			</code></pre>
+		</figure>
+		<p>
+			And, if <code>path</code> is:
+		</p>
+		<figure>
+			<pre><code>
+/.well-known/webfinger?resource=acct:reiver@mastodon.social
+			</code></pre>
+		</figure>
+		<p>
+			Then the <strong>WebFinger HTTP URL</strong> would be:
+		</p>
+		<figure>
+			<pre><code>
+https://mastodon.social/.well-known/webfinger?resource=acct:reiver@mastodon.social
+			</code></pre>
+		</figure>
+		<p>
+			If we continue with our previous examples, we get:
+		</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Fediverse ID</th>
+					<th>acct-URI</th>
+					<th>WebFinger Host</th>
+					<th>WebFinger Path</th>
+					<th>WebFinger HTTP URL</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><code>@joeblow@example.com</code></td>
+					<td><code>acct:joeblow@example.com</code></td>
+					<td><code>example.com</code></td>
+					<td><code>/.well-known/webfinger?resource=acct:joeblow@example.com</code></td>
+					<td><code>https://example.com/.well-known/webfinger?resource=acct:joeblow@example.com</code></td>
+				</tr>
+				<tr>
+					<td><code>@reiver@mastodon.social</code></td>
+					<td><code>acct:reiver@mastodon.social</code></td>
+					<td><code>mastodon.social</code></td>
+					<td><code>/.well-known/webfinger?resource=acct:reiver@mastodon.social</code></td>
+					<td><code>https://mastodon.social/.well-known/webfinger?resource=acct:reiver@mastodon.social</code></td>
+				</tr>
+				<tr>
+					<td><code>@dansup@pixelfed.social</code></td>
+					<td><code>acct:dansup@pixelfed.social</code></td>
+					<td><code>pixelfed.social</code></td>
+					<td><code>/.well-known/webfinger?resource=acct:dansup@pixelfed.social</code></td>
+					<td><code>https://pixelfed.social/.well-known/webfinger?resource=acct:dansup@pixelfed.social</code></td>
+				</tr>
+				<tr>
+					<td><code>@bahmankas@reiver.link</code></td>
+					<td><code>acct:bahmankas@reiver.link</code></td>
+					<td><code>reiver.link</code></td>
+					<td><code>/.well-known/webfinger?resource=acct:bahmankas@reiver.link</code></td>
+					<td><code>https://reiver.link/.well-known/webfinger?resource=acct:bahmankas@reiver.link</code></td>
+				</tr>
+			</tbody>
+		</table>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
-		<h1 property="name">WebFinger HTTP Request</h1>
+		<h1>Step <span property="position">6</span>: <span property="name">WebFinger HTTP Request</span></h1>
+		<p>
+			If you put the <strong>WebFinger HTTP URL</strong> you got in <em>step 5</em> in a web browser, some of them will give you the response you want, some won't.
+		</p>
+		<p>
+			To try to make them <em>all</em> give you the response you want, you need to mak the HTTP request to the <strong>WebFinger HTTP URL</strong> (from <em>step 5</em>) with a special HTTP request header:
+		</p>
+		<figure>
+			<pre><ocode>
+Accept: application/jrd+json
+			</code></pre>
+		</figure>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
-		<h1 property="name">WebFinger HTTP Response</h1>
+		<h1>Step <span property="position">7</span>: <span property="name">WebFinger HTTP Response</span></h1>
+		<p>
+			When you make a (valid) HTTP request to a <strong>WebFinger HTTP URL</strong>, it should <abbr title="JSON resource descriptor">JRD</abbr>.
+		</p>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
 		<h1 property="name">WebFinger JRD</h1>
