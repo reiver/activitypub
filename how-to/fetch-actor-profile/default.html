@@ -468,18 +468,47 @@ curl -H 'Accept: application/jrd+json' https://mastodon.social/.well-known/webfi
 }
 			</code></pre>
 		</figure>
+		<p>
+			The first <abbr title="JSON resource descriptor">JRD</abbr> document is what Mastodon returns from WebFinger (at the time this how-to article was written).
+			The second <abbr title="JSON resource descriptor">JRD</abbr> document is what Pixelfed returns from WebFinger (at the time this how-to article was written).
+		</p>
+		<p>
+			They are similar, but not exactly the same.
+			The Mastodon version has some stuff that the Pixelfed version doesn't have.
+			And, the Pixelfed version has some stuff that the Mastodon version doesn't have.
+		</p>
+		<p>
+			These differences are OK, because there is only two things we care about in the <abbr title="JSON resource descriptor">JRD</abbr> document.
+		</p>
+		<ol>
+			<li>
+				We want to make sure what is in the <code>"subject"</code> field matches the <strong>acct-URI</strong>.
+			</li>
+			<li>
+				We want the <code>"link"</code> with <code>"rel"</code> equal-to <code>"self"</code> and <code>"type"</code> equal-to <code>"application/activity+json"</code>.
+			</li>
+		</ol>
+		<p>
+			We will cover each of these in the next two steps.
+		</p>
 	</section>
 	<section property="step" typeof="HowToStep">
-		<h1>Step <span property="position">8</span>: <span property="name">ActivityPub Actor HTTP URL</span></h1>
+		<h1>Step <span property="position">8</span>: <span property="name"><abbr title="JSON resource descriptor">JRD</abbr> <code>"subject"</code> Validation</span></h1>
 	</section>
 	<section property="step" typeof="HowToStep">
-		<h1>Step <span property="position">9</span>: <span property="name">ActivityPub Actor HTTP Request</span></h1>
+		<h1>Step <span property="position">9</span>: <span property="name"><abbr title="JSON resource descriptor">JRD</abbr> ActivityPub rel-self link</span></h1>
+	</section>
+	<section property="step" typeof="HowToStep">
+		<h1>Step <span property="position">10</span>: <span property="name">ActivityPub Actor HTTP URL</span></h1>
+	</section>
+	<section property="step" typeof="HowToStep">
+		<h1>Step <span property="position">11</span>: <span property="name">ActivityPub Actor HTTP Request</span></h1>
 		<section>
 			<h1>curl</h1>
 		</section>
 	</section>
 	<section property="step" typeof="HowToStep">
-		<h1>Step <span property="position">10</span>: <span property="name">ActivityPub Actor HTTP Response</span></h1>
+		<h1>Step <span property="position">12</span>: <span property="name">ActivityPub Actor HTTP Response</span></h1>
 	</section>
 	<section property="step" typeof="HowToStep">
 		<h1 property="name">ActivityPub Actor JSON-LD</h1>
