@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" vocab="https://schema.org/" typeof="TechArticle" class="article">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/text-readability/readmode.css" />
+<title>acct-URI explained for ActivityPub developers</title>
+<meta name="author" content="Charles Iliya Krempeaux" />
+</head>
+<body>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+	<ol>
+		<li><a href="/">Home</a></li>
+		<li><a href="../../">ActivityPub</a></li>
+		<li><a href="../">Guide</a></li>
+		<li><a href="./" aria-current="page">acct-URI</a></li>
+	</ol>
+</nav>
+
+<main>
+<article>
+	<header>
+		<hgroup>
+			<h1 property="headline">acct-URI explained for ActivityPub developers</h1>
+			<p>
+				Fediverse ID → acct-URI → WebFinger
+			</p>
+		</hgroup>
+		<p>
+			by <a href="https://reiver.link/">Charles Iliya Krempeaux</a>
+		</p>
+	</header>
+	<p>
+		ActivityPub developer use other protocols, formats, and technologies in addition to ActivityPub.
+		One of these is — the <strong>acct-URI</strong>.
+	</p>
+	<p>
+		The <strong>acct-URI</strong> looks like this:
+	</p>
+	<figure>
+		<pre><code>
+acct:reiver@mastodon.social
+		</code></pre>
+	</figure>
+	<p>
+		The place ActivityPub developers will see these <strong>acct-URI</strong>s is with <strong>WebFinger</strong>.
+		For example:
+	</p>
+	<figure>
+		<pre><code>
+https://mastodon.social/.well-known/webfinger?resource=<mark>acct:reiver@mastodon.social</mark>
+		</code></pre>
+	</figure>
+	<p>
+		A <strong>Fediverse ID</strong> will get transformed into an <strong>acct-URI</strong> before it is passed to <strong>WebFinger</strong>.
+	</p>
+	<p>
+		The purpose of <strong>acct-URI</strong> is to have a way of representing a <em>user account</em> as a URI.
+		Because <strong>WebFinger</strong> expects the things (the <code>resource</code>) you give it to be a URL/URI/IRI.
+	</p>
+	<p>
+		A <strong>Fediverse ID</strong> is <em>not</em> a URI, so we transform it into a URI by turning it into a <strong>acct-URI</strong>.
+		For example, the <strong>Fediverse ID</strong> <code>@reiver@mastodon.social</code> becomes the <strong>acct-URI</strong> <code>acct:reiver@mastodon.social</code>.
+	</p>
+	<section>
+		<h1>acct-URI Structure</h1>
+		<p>
+			<strong>acct-URI</strong> are made up of 5 parts — with 2 parts that you actually care about.
+		</p>
+		<figure>
+			<pre><code>
+    user-part
+     ↓↓↓↓↓↓
+acct:<mark>reiver</mark>@<mark>mastodon.social</mark>
+            ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+                 host
+			</code></pre>
+		</figure>
+		<p>
+			The <strong>user-part</strong> and the <strong>host</strong> of the <strong>acct-URI</strong> are the important parts.
+		</p>
+	</section>
+	<section>
+		<h1>acct-URI Scheme</h1>
+		<p>
+			Note that acct-URI <strong>schemes</strong> are case-insensitive (because <em>all</em> URI schemes are case-insensitive).
+		</p>
+		<p>
+			So, these are all equivalent:
+		</p>
+		<ul>
+			<li><code>acct:reiver@mastodon.social</code></li>
+			<li><code>accT:reiver@mastodon.social</code></li>
+			<li><code>acCt:reiver@mastodon.social</code></li>
+			<li><code>acCT:reiver@mastodon.social</code></li>
+			<li><code>aCct:reiver@mastodon.social</code></li>
+			<li><code>aCcT:reiver@mastodon.social</code></li>
+			<li><code>aCCt:reiver@mastodon.social</code></li>
+			<li><code>aCCT:reiver@mastodon.social</code></li>
+			<li><code>Acct:reiver@mastodon.social</code></li>
+			<li><code>AccT:reiver@mastodon.social</code></li>
+			<li><code>AcCt:reiver@mastodon.social</code></li>
+			<li><code>AcCT:reiver@mastodon.social</code></li>
+			<li><code>ACct:reiver@mastodon.social</code></li>
+			<li><code>ACcT:reiver@mastodon.social</code></li>
+			<li><code>ACCt:reiver@mastodon.social</code></li>
+			<li><code>ACCT:reiver@mastodon.social</code></li>
+		</ul>
+		<p>
+			If you are implementing the server-side of WebFinger, you should probably normalize the <strong>scheme</strong> of the URL/URI/IRI you received as the <code>resource</code> by making the <strong>scheme</strong> lower-case.
+		</p>
+		<p>
+			Also, if you are implementing the client-side of WebFinger, you should probably normalize the <strong>scheme</strong> of the URL/URI/IRI you are sending as the <code>resource</code> by making the <strong>scheme</strong> lower-case.
+		</p>
+		<p>
+			(Note that you need to be careful about lower-casing the <strong>scheme</strong> of an <strong>acct-URI</strong>, since some parts of a <strong>acct-URI</strong> is case-insensitive but other parts are case-sensitive.
+			I.e., you cannot validly lower-case the whole <strong>acct-URI</strong>.)
+		</p>
+	</section>
+	<section>
+		<h1>acct-URI Host</h1>
+		<p>
+			Note that acct-URI hosts are case-insensitive (because <em>all</em> hosts are case-insensitive).
+		</p>
+		<p>
+			So, these are all equivalent:
+		</p>
+		<ul>
+			<li><code>acct:reiver@mastodon.social</code></li>
+			<li><code>acct:reiver@MASTODON.SOCIAL</code></li>
+			<li><code>acct:reiver@mastodon.SOCIAL</code></li>
+			<li><code>acct:reiver@MASTODON.social</code></li>
+			<li><code>acct:reiver@MaStOdOn.SoCiAl</code></li>
+			<li><code>acct:reiver@mAsToDoN.sOcIaL</code></li>
+			<li><em>etc</em></li>
+		</ul>
+		<p>
+			If you are implementing the server-side of WebFinger, you should probably normalize the scheme of the <strong>host</strong> of the <strong>acct-URI</strong> you received as the <code>resource</code> by making the <strong>host</strong> lower-case.
+		</p>
+		<p>
+			Also, if you are implementing the client-side of WebFinger, you should probably normalize the <strong>host</strong> of the <strong>acct-URI</strong> you are sending as the <code>resource</code> by making the <strong>host</strong> lower-case.
+		</p>
+		<p>
+			(Note that you need to be careful about lower-casing the <strong>host</strong> of an <strong>acct-URI</strong>, since some parts of a <strong>acct-URI</strong> is case-insensitive but other parts are case-sensitive.
+			I.e., you cannot validly lower-case the whole <strong>acct-URI</strong>.)
+		</p>
+	</section>
+	<footer>
+		<include src="../../author.html" />
+		<include src="../../license.html" />
+	</footer>
+</article>
+</main>
+</body>
+</html>
