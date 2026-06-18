@@ -169,7 +169,7 @@
 			</code></pre>
 		</figure>
 	</section>
-	<section propertyy="step" typeof=="HowToStep">
+	<section propertyy="step" typeof="HowToStep">
 		<h1>Step <span property="position">3</span>: <span property="name">WebFinger Path</span></h1>
 		<p>
 			<strong>Step 3</strong> is constructing the <strong>WebFinger path</strong>.
@@ -224,7 +224,7 @@
 			Note that you should <a href="/url-encode/">URL encode</a> the <strong>acct-URI</strong> <em>before</em> putting it into the <strong>WebFinger path</strong>.
 		</p>
 	</section>
-	<section propertyy="step" typeof=="HowToStep">
+	<section propertyy="step" typeof="HowToStep">
 		<h1>Step <span property="position">4</span>: <span property="name">WebFinger Host</span></h1>
 		<p>
 			Now we need to infer the <strong>host</strong> for the <strong>WebFinger HTTP URL</strong> we will eventually construct (in <em>step 5</em>).
@@ -264,7 +264,7 @@
 			</tbody>
 		</table>
 	</section>
-	<section propertyy="step" typeof=="HowToStep">
+	<section propertyy="step" typeof="HowToStep">
 		<h1>Step <span property="position">5</span>: <span property="name">WebFinger HTTP URL</span></h1>
 		<p>
 			Now we construct is <strong>WebFinger HTTP URL</strong>.
@@ -347,7 +347,7 @@ https://mastodon.social/.well-known/webfinger?resource=acct:reiver@mastodon.soci
 			</tbody>
 		</table>
 	</section>
-	<section propertyy="step" typeof=="HowToStep">
+	<section propertyy="step" typeof="HowToStep">
 		<h1>Step <span property="position">6</span>: <span property="name">WebFinger HTTP Request</span></h1>
 		<p>
 			If you put the <strong>WebFinger HTTP URL</strong> you got in <em>step 5</em> in a web browser, some of them will give you the response you want, some won't.
@@ -380,7 +380,7 @@ curl -H 'Accept: application/jrd+json' https://mastodon.social/.well-known/webfi
 			</code></pre>
 		</figure>
 	</section>
-	<section propertyy="step" typeof=="HowToStep">
+	<section propertyy="step" typeof="HowToStep">
 		<h1>Step <span property="position">7</span>: <span property="name">WebFinger HTTP Response</span></h1>
 		<p>
 			When you make a (valid) HTTP request to a <strong>WebFinger HTTP URL</strong>, it should return <abbr title="JSON resource descriptor">JRD</abbr> in the HTTP response.
