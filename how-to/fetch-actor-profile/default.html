@@ -30,6 +30,11 @@
 		</p>
 	</header>
 	<p>
+		This article probably could have also been calling:
+		<strong>Webfinger 101: How to resolve <code>@user@domain.com</code> to an ActivityPub profile URL</strong>
+		But anyway —
+	</p>
+	<p>
 		How do you get a Fediverse user's profile information using code‽
 		How (as an ActivityPub developers would say) do you get an ActivityPub actor's profile information?
 		I.e., how do you go from a <strong>Fediverse ID</strong> like this:
@@ -97,6 +102,21 @@
 			You many be thinking something like: <em>these look like an e-mail address with an extra at-sign ("@") at the beginning</em>.
 			And, that is probably a good way to thinking about it.
 		</p>
+		<p>
+			<strong>Fediverse IDs</strong> begin with an <strong>at-sign</strong> ("@"), then there is the <strong>handle</strong>, then there is another <strong>at-sign</strong> ("@"), and then finally the <strong>host</strong>.
+		</p>
+		<figure>
+			<pre><code>
+     handle
+     ↓↓↓↓↓↓
+    @<mark>reiver</mark>@<mark>mastodon.social</mark>
+            ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+                 host
+			</code></pre>
+			<figcaption>
+				A <strong>Fediverse ID</strong> with the <strong>handle</strong> labeled, and the <strong>host</strong> labeled.
+			</figcaption>
+		</figure>
 	</section>
 	<section property="step" typeof="HowToStep">
 		<h1>Step <span property="position">2</span>: <span property="name">acct-URI</span></h1>
