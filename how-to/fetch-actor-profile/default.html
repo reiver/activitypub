@@ -385,6 +385,89 @@ curl -H 'Accept: application/jrd+json' https://mastodon.social/.well-known/webfi
 		<p>
 			When you make a (valid) HTTP request to a <strong>WebFinger HTTP URL</strong>, it should <abbr title="JSON resource descriptor">JRD</abbr>.
 		</p>
+		<p>
+			The <strong>WebFinger</strong> <abbr title="JSON resource descriptor">JRD</abbr> for <code>@reiver@mastodon.social</code> (using the <strong>WebFinger HTTP URL</strong> <code>https://mastodon.social/.well-known/webfinger?resource=acct:reiver@mastodon.social</code>) looks like this:
+		</p>
+		<figure>
+			<pre><code>
+{
+  "subject": "acct:reiver@mastodon.social",
+  "aliases": [
+    "https://mastodon.social/@reiver",
+    "https://mastodon.social/users/reiver"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://mastodon.social/@reiver"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://mastodon.social/users/reiver"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://mastodon.social/authorize_interaction?uri={uri}"
+    },
+    {
+      "rel": "https://w3id.org/fep/3b86/Create",
+      "template": "https://mastodon.social/share?text={content}"
+    },
+    {
+      "rel": "https://w3id.org/fep/3b86/Object",
+      "template": "https://mastodon.social/authorize_interaction?uri={object}"
+    },
+    {
+      "rel": "http://webfinger.net/rel/avatar",
+      "type": "image/png",
+      "href": "https://files.mastodon.social/accounts/avatars/108/116/990/725/247/731/original/2e097b7812894201.png"
+    }
+  ]
+}
+			</code></pre>
+		</figure>
+		<p>
+			The <strong>WebFinger</strong> <abbr title="JSON resource descriptor">JRD</abbr> for <code>@dansup@pixelfed.social</code> (using the <strong>WebFinger HTTP URL</strong> <code>https://mastodon.social/.well-known/webfinger?resource=acct:reiver@mastodon.social</code>) looks like this:
+		</p>
+		<figure>
+			<pre><code>
+{
+  "subject": "acct:dansup@pixelfed.social",
+  "aliases": [
+    "https://pixelfed.social/dansup",
+    "https://pixelfed.social/users/dansup"
+  ],
+  "links": [
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://pixelfed.social/dansup"
+    },
+    {
+      "rel": "http://schemas.google.com/g/2010#updates-from",
+      "type": "application/atom+xml",
+      "href": "https://pixelfed.social/users/dansup.atom"
+    },
+    {
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://pixelfed.social/users/dansup"
+    },
+    {
+      "rel": "http://webfinger.net/rel/avatar",
+      "type": "image/jpeg",
+      "href": "https://pixelfed.social/storage/avatars/000/000/000/000/000/000/2/mLZr2R47XEwbmasH2M3P_avatar.jpg?v=57"
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://pixelfed.social/authorize_interaction?uri={uri}"
+    }
+  ]
+}
+			</code></pre>
+		</figure>
 	</section>
 	<section property="step" typeof="HowToStep">
 		<h1>Step <span property="position">8</span>: <span property="name">ActivityPub Actor HTTP URL</span></h1>
