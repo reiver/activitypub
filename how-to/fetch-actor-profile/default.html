@@ -360,6 +360,25 @@ https://mastodon.social/.well-known/webfinger?resource=acct:reiver@mastodon.soci
 Accept: application/jrd+json
 			</code></pre>
 		</figure>
+		<p>
+			The full raw HTTP request would be something like:
+		</p>
+		<figure>
+			<pre><ocode>
+GET /.well-known/webfinger?resource=acct:reiver@mastodon.social HTTP/1.1
+Host: mastodon.social
+Accept: application/jrd+json
+Connection: close
+			</code></pre>
+		</figure>
+		<p>
+			You could do something like this using the <code>curl</code> command:
+		</p>
+		<figure>
+			<pre><ocode>
+curl -H 'Accept: application/jrd+json' https://mastodon.social/.well-known/webfinger?resource=acct:reiver@mastodon.social
+			</code></pre>
+		</figure>
 	</section>
 	<section propertyy="step" typeof=="HowToStep">
 		<h1>Step <span property="position">7</span>: <span property="name">WebFinger HTTP Response</span></h1>
