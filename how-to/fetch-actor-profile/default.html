@@ -383,7 +383,7 @@ curl -H 'Accept: application/jrd+json' https://mastodon.social/.well-known/webfi
 	<section propertyy="step" typeof=="HowToStep">
 		<h1>Step <span property="position">7</span>: <span property="name">WebFinger HTTP Response</span></h1>
 		<p>
-			When you make a (valid) HTTP request to a <strong>WebFinger HTTP URL</strong>, it should <abbr title="JSON resource descriptor">JRD</abbr>.
+			When you make a (valid) HTTP request to a <strong>WebFinger HTTP URL</strong>, it should return <abbr title="JSON resource descriptor">JRD</abbr> in the HTTP response.
 		</p>
 		<p>
 			The <strong>WebFinger</strong> <abbr title="JSON resource descriptor">JRD</abbr> for <code>@reiver@mastodon.social</code> (using the <strong>WebFinger HTTP URL</strong> <code>https://mastodon.social/.well-known/webfinger?resource=acct:reiver@mastodon.social</code>) looks like this:
@@ -478,7 +478,7 @@ curl -H 'Accept: application/jrd+json' https://mastodon.social/.well-known/webfi
 			And, the Pixelfed version has some stuff that the Mastodon version doesn't have.
 		</p>
 		<p>
-			These differences are OK, because there is only two things we care about in the <abbr title="JSON resource descriptor">JRD</abbr> document.
+			These differences are OK, because <strong>there is only two things we care about in the <abbr title="JSON resource descriptor">JRD</abbr> document</strong>:
 		</p>
 		<ol>
 			<li>
@@ -494,6 +494,8 @@ curl -H 'Accept: application/jrd+json' https://mastodon.social/.well-known/webfi
 	</section>
 	<section property="step" typeof="HowToStep">
 		<h1>Step <span property="position">8</span>: <span property="name"><abbr title="JSON resource descriptor">JRD</abbr> <code>"subject"</code> Validation</span></h1>
+		<p>
+		</p>
 	</section>
 	<section property="step" typeof="HowToStep">
 		<h1>Step <span property="position">9</span>: <span property="name"><abbr title="JSON resource descriptor">JRD</abbr> ActivityPub rel-self link</span></h1>
