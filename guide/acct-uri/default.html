@@ -58,7 +58,7 @@ https://mastodon.social/.well-known/webfinger?resource=<mark>acct:reiver@mastodo
 		Because <strong>WebFinger</strong> expects the things (the <code>resource</code>) you give it to be a URL/URI/IRI.
 	</p>
 	<p>
-		A <strong>Fediverse ID</strong> is <em>not</em> a URI, so we transform it into a URI by turning it into a <strong>acct-URI</strong>.
+		A <strong>Fediverse ID</strong> is <em>not</em> a URI, so we transform it into a URI by turning it into an <strong>acct-URI</strong>.
 		For example, the <strong>Fediverse ID</strong> <code>@reiver@mastodon.social</code> becomes the <strong>acct-URI</strong> <code>acct:reiver@mastodon.social</code>.
 	</p>
 	<section>
@@ -143,6 +143,14 @@ acct:<mark>reiver</mark>@<mark>mastodon.social</mark>
 			(Note that you need to be careful about lower-casing the <strong>host</strong> of an <strong>acct-URI</strong>, since some parts of a <strong>acct-URI</strong> is case-insensitive but other parts are case-sensitive.
 			I.e., you cannot validly lower-case the whole <strong>acct-URI</strong>.)
 		</p>
+	</section>
+	<section>
+		<h1>See Also</h1>
+		<ul>
+			<li>
+				<a href="../../how-to/fetch-actor-profile/">How to Fetch an ActivityPub Actor Profile: A Developer's Guide</a>
+			</li>
+		</ul>
 	</section>
 	<footer>
 		<include src="../../author.html" />
