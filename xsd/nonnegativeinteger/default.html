@@ -45,94 +45,100 @@
 			—
 			there are multiple valid ways to represent the same number using <code>xsd:nonNegativeInteger</code>.
 		</p>
-		<p>
-			For example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>zero</strong> (0):
-		</p>
-		<ul>
-			<li>
-				<code>0</code>
-			</li>
-			<li>
-				<code>00</code>
-			</li>
-			<li>
-				<code>000</code>
-			</li>
-			<li>
-				<code>0000</code>
-			</li>
-			<li>
-				<code>00000</code>
-			</li>
-			<li>
-				<code>+0</code>
-			</li>
-			<li>
-				<code>+00</code>
-			</li>
-			<li>
-				<code>+000</code>
-			</li>
-			<li>
-				<code>+0000</code>
-			</li>
-			<li>
-				<code>+00000</code>
-			</li>
-		</ul>
-		<p>
-			Note that <code>xsd:nonNegativeInteger</code> has a concept of a <strong>canonical representation</strong>.
-			That even though <code>xsd:nonNegativeInteger</code> has multiple representations for a number, that there is <em>only one</em> <strong>canonical representation</strong>.
-			For this particular example, the <code>xsd:nonNegativeInteger</code> <strong>canonical representation</strong> is <code></code>:
-		</p>
-		<ul>
-			<li>
-				<code>0</code>
-			</li>
-		</ul>
-		<p>
-			And, for another example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>one</strong> (1):
-		</p>
-		<ul>
-			<li>
-				<code>1</code>
-			</li>
-			<li>
-				<code>01</code>
-			</li>
-			<li>
-				<code>00001</code>
-			</li>
-			<li>
-				<code>00000000001</code>
-			</li>
-			<li>
-				<code>000000000000000000001</code>
-			</li>
-			<li>
-				<code>+1</code>
-			</li>
-			<li>
-				<code>+01</code>
+		<section>
+			<h1>Multiple Representations of Zero</h1>
+			<p>
+				For example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>zero</strong> (0):
+			</p>
+			<ul>
+				<li>
+					<code>0</code>
 				</li>
-			<li>
-				<code>+00001</code>
-			</li>
-			<li>
-				<code>+00000000001</code>
-			</li>
-			<li>
-				<code>+000000000000000000001</code>
-			</li>
-		</ul>
-		<p>
-			For this particular example, the <code>xsd:nonNegativeInteger</code> <strong>canonical representation</strong> is <code></code>:
-		</p>
-		<ul>
-			<li>
-				<code>1</code>
-			</li>
-		</ul>
+				<li>
+					<code>00</code>
+				</li>
+				<li>
+					<code>000</code>
+				</li>
+				<li>
+					<code>0000</code>
+				</li>
+				<li>
+					<code>00000</code>
+				</li>
+				<li>
+					<code>+0</code>
+				</li>
+				<li>
+					<code>+00</code>
+				</li>
+				<li>
+					<code>+000</code>
+				</li>
+				<li>
+					<code>+0000</code>
+				</li>
+				<li>
+					<code>+00000</code>
+				</li>
+			</ul>
+			<p>
+				Note that <code>xsd:nonNegativeInteger</code> has a concept of a <strong>canonical representation</strong>.
+				That even though <code>xsd:nonNegativeInteger</code> has multiple representations for a number, that there is <em>only one</em> <strong>canonical representation</strong>.
+				For this particular example, the <code>xsd:nonNegativeInteger</code> <strong>canonical representation</strong> is <code></code>:
+			</p>
+			<ul>
+				<li>
+					<code>0</code>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<h1>Multiple Representations of One</h1>
+			<p>
+				And, for another example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>one</strong> (1):
+			</p>
+			<ul>
+				<li>
+					<code>1</code>
+				</li>
+				<li>
+					<code>01</code>
+				</li>
+				<li>
+					<code>00001</code>
+				</li>
+				<li>
+					<code>00000000001</code>
+				</li>
+				<li>
+					<code>000000000000000000001</code>
+				</li>
+				<li>
+					<code>+1</code>
+				</li>
+				<li>
+					<code>+01</code>
+					</li>
+				<li>
+					<code>+00001</code>
+				</li>
+				<li>
+					<code>+00000000001</code>
+				</li>
+				<li>
+					<code>+000000000000000000001</code>
+				</li>
+			</ul>
+			<p>
+				For this particular example, the <code>xsd:nonNegativeInteger</code> <strong>canonical representation</strong> is <code></code>:
+			</p>
+			<ul>
+				<li>
+					<code>1</code>
+				</li>
+			</ul>
+		</section>
 		<p>
 			Here is another example:
 		</p>
@@ -141,7 +147,33 @@
 				<code>5</code>
 			</li>
 			<li>
+				<code>00005</code>
+			</li>
+			<li>
+				<code>0000000005</code>
+			</li>
+			<li>
+				<code>000000000000005</code>
+			</li>
+			<li>
 				<code>+5</code>
+			</li>
+			<li>
+				<code>+00005</code>
+			</li>
+			<li>
+				<code>+0000000005</code>
+			</li>
+			<li>
+				<code>+000000000000005</code>
+			</li>
+		</ul>
+		<p>
+			For this particular example, the <code>xsd:nonNegativeInteger</code> <strong>canonical representation</strong> is <code></code> (as you probably expected):
+		</p>
+		<ul>
+			<li>
+				<code>5</code>
 			</li>
 		</ul>
 		<p>
@@ -177,6 +209,14 @@
 			</li>
 			<li>
 				<code>+000000000000000000000123</code>
+			</li>
+		</ul>
+		<p>
+			For this particular example, the <code>xsd:nonNegativeInteger</code> <strong>canonical representation</strong> is <code></code> (as you probably expected):
+		</p>
+		<ul>
+			<li>
+				<code>123</code>
 			</li>
 		</ul>
 		<p>
