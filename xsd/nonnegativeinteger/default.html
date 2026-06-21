@@ -391,6 +391,25 @@
 		</table>
 	</section>
 	<section>
+		<h1>Validation</h1>
+		<p>
+			The following regular expression can be used to validate a <code>xsd:nonNegativeInteger</code>:
+		</p>
+		<figure>
+			<pre><code>
+^\+?[0-9]+$
+			</code></pre>
+		</figure>
+		<p>
+			The following regular expression can be used to validate the <strong>canonical representation</strong> of a <code>xsd:nonNegativeInteger</code>:
+		</p>
+		<figure>
+			<pre><code>
+^(0|[1-9][0-9]*)$
+			</code></pre>
+		</figure>
+	</section>
+	<section>
 		<h1>Specification</h1>
 		<p>
 			The specification where <code>xsd:nonNegativeInteger</code> is defined is at:
