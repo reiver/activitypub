@@ -35,136 +35,240 @@
 		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integers</strong>.
 	</p>
 	<p>
-		Although note that <code>xsd:nonNegativeInteger</code> has some quirks.
+		Although note that <code>xsd:nonNegativeInteger</code> has some quirks — from the point of view of someone who is used to working with <em>64-bit unsigned integers</em>, or <em>2048-bit unsigned integers</em>, or whatever.
+		These quirks would affect how you represent, store, parse, and validate a <code>xsd:nonNegativeInteger</code>.
 	</p>
-	<p>
-		For example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>zero</strong> (0):
-	</p>
-	<ul>
-		<li>
-			<code>0</code>
-		</li>
-		<li>
-			<code>00</code>
-		</li>
-		<li>
-			<code>000</code>
-		</li>
-		<li>
-			<code>0000</code>
-		</li>
-		<li>
-			<code>00000</code>
-		</li>
-		<li>
-			<code>+0</code>
-		</li>
-		<li>
-			<code>+00</code>
-		</li>
-		<li>
-			<code>+000</code>
-		</li>
-		<li>
-			<code>+0000</code>
-		</li>
-		<li>
-			<code>+00000</code>
-		</li>
-	</ul>
-	<p>
-		And, for example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>one</strong> (1):
-	</p>
-	<ul>
-		<li>
-			<code>1</code>
-		</li>
-		<li>
-			<code>01</code>
-		</li>
-		<li>
-			<code>00001</code>
-		</li>
-		<li>
-			<code>00000000001</code>
-		</li>
-		<li>
-			<code>000000000000000000001</code>
-		</li>
-		<li>
-			<code>+1</code>
-		</li>
-		<li>
-			<code>+01</code>
-		</li>
-		<li>
-			<code>+00001</code>
-		</li>
-		<li>
-			<code>+00000000001</code>
-		</li>
-		<li>
-			<code>+000000000000000000001</code>
-		</li>
-	</ul>
-	<p>
-		And also, for example, these are more valid values for <code>xsd:nonNegativeInteger</code>:
-	</p>
-	<ul>
-		<li>
-			<code>5</code>
-		</li>
-		<li>
-			<code>+5</code>
-		</li>
-		<li>
-			<code>123</code>
-		</li>
-		<li>
-			<code>+123</code>
-		</li>
-		<li>
-			<code>18731</code>
-		</li>
-		<li>
-			<code>+18731</code>
-		</li>
-		<li>
-			<code>18446744073709551615</code>
-		</li>
-		<li>
-			<code>+18446744073709551615</code>
-		</li>
-		<li>
-			<code>170141183460469231731687303715884105727</code>
-		</li>
-		<li>
-			<code>+170141183460469231731687303715884105727</code>
-		</li>
-		<li>
-			<code>000000000000000000170141183460469231731687303715884105727</code>
-		</li>
-		<li>
-			<code>+000000000000000000170141183460469231731687303715884105727</code>
-		</li>
-	</ul>
-	<p>
-		Note that <code>xsd:nonNegativeInteger</code> allows an optional preceding plus sign (“+”) (U+002B).
-		(Although a <code>xsd:nonNegativeInteger</code> in its <strong>canonical representation</strong> does <strong>not</strong> allow for a preceding plus sign (“+”) (U+002B).)
-	</p>
-	<p>
-		Note that <code>xsd:nonNegativeInteger</code> allows an optional leading zeros (“0”) (U+0030).
-		(Although a <code>xsd:nonNegativeInteger</code> in its <strong>canonical representation</strong> does <strong>not</strong> allow for leading zeros (“0”) (U+0030).)
-	</p>
-	<p>
-		Also note that <code>xsd:nonNegativeInteger</code> do <strong>not</strong> have an upper bound.
-		Meaning, <code>xsd:nonNegativeInteger</code> can be larger than a <em>unsigned 64-bit integer</em> (<code>uint64</code>) can hold.
-		It can even larger than a
-		<em>unsigned 128-bit integer</em> (<code>uint128</code>),
-		<em>unsigned 256-bit integer</em> (<code>uint256</code>),
-		<em>unsigned 512-bit integer</em> (<code>uint512</code>),
-		etc, can hold.
-	</p>
+	<section>
+		<h1>Multiple Representations</h1>
+		<p>
+			Here is one quirk of <code>xsd:nonNegativeInteger</code>
+			—
+			there are multiple valid ways to represent the same number using <code>xsd:nonNegativeInteger</code>.
+		</p>
+		<p>
+			For example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>zero</strong> (0):
+		</p>
+		<ul>
+			<li>
+				<code>0</code>
+			</li>
+			<li>
+				<code>00</code>
+			</li>
+			<li>
+				<code>000</code>
+			</li>
+			<li>
+				<code>0000</code>
+			</li>
+			<li>
+				<code>00000</code>
+			</li>
+			<li>
+				<code>+0</code>
+			</li>
+			<li>
+				<code>+00</code>
+			</li>
+			<li>
+				<code>+000</code>
+			</li>
+			<li>
+				<code>+0000</code>
+			</li>
+			<li>
+				<code>+00000</code>
+			</li>
+		</ul>
+		<p>
+			And, for example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>one</strong> (1):
+		</p>
+		<ul>
+			<li>
+				<code>1</code>
+			</li>
+			<li>
+				<code>01</code>
+			</li>
+			<li>
+				<code>00001</code>
+			</li>
+			<li>
+				<code>00000000001</code>
+			</li>
+			<li>
+				<code>000000000000000000001</code>
+			</li>
+			<li>
+				<code>+1</code>
+			</li>
+			<li>
+				<code>+01</code>
+				</li>
+			<li>
+				<code>+00001</code>
+			</li>
+			<li>
+				<code>+00000000001</code>
+			</li>
+			<li>
+				<code>+000000000000000000001</code>
+			</li>
+		</ul>
+		<p>
+			Here is another example:
+		</p>
+		<ul>
+			<li>
+				<code>5</code>
+			</li>
+			<li>
+				<code>+5</code>
+			</li>
+		</ul>
+		<p>
+			And, another:
+		</p>
+		<ul>
+			<li>
+				<code>123</code>
+			</li>
+			<li>
+				<code>0123</code>
+			</li>
+			<li>
+				<code>00123</code>
+			</li>
+			<li>
+				<code>000123</code>
+			</li>
+			<li>
+				<code>000000000000000000000123</code>
+			</li>
+			<li>
+				<code>123</code>
+			</li>
+			<li>
+				<code>0123</code>
+			</li>
+			<li>
+				<code>00123</code>
+			</li>
+			<li>
+				<code>000123</code>
+			</li>
+			<li>
+				<code>+000000000000000000000123</code>
+			</li>
+		</ul>
+		<p>
+			And, another:
+		</p>
+		<ul>
+			<li>
+				<code>18731</code>
+			</li>
+			<li>
+				<code>000000018731</code>
+			</li>
+			<li>
+				<code>00000000000000000018731</code>
+			</li>
+			<li>
+				<code>+18731</code>
+			</li>
+			<li>
+				<code>+000000018731</code>
+			</li>
+			<li>
+				<code>+00000000000000000018731</code>
+			</li>
+		</ul>
+		<p>
+			And, another:
+		</p>
+		<ul>
+			<li>
+				<code>18446744073709551615</code>
+			</li>
+			<li>
+				<code>0000000000018446744073709551615</code>
+			</li>
+			<li>
+				<code>+18446744073709551615</code>
+			</li>
+			<li>
+				<code>+0000000000018446744073709551615</code>
+			</li>
+		</ul>
+		<p>
+			And, another:
+		</p>
+		<ul>
+			<li>
+				<code>170141183460469231731687303715884105727</code>
+			</li>
+			<li>
+				<code>00170141183460469231731687303715884105727</code>
+			</li>
+			<li>
+				<code>000000000000000000170141183460469231731687303715884105727</code>
+			</li>
+			<li>
+				<code>+170141183460469231731687303715884105727</code>
+			</li>
+			<li>
+				<code>+00170141183460469231731687303715884105727</code>
+			</li>
+			<li>
+				<code>+000000000000000000170141183460469231731687303715884105727</code>
+			</li>
+		</ul>
+	</section>
+	<section>
+		<h1>Optional Preceding Plus Sign</h1>
+		<p>
+			Note that <code>xsd:nonNegativeInteger</code> allows an optional preceding plus sign (“+”) (U+002B).
+		<p>
+		<figure>
+			<pre></code>
++123
+			</code></pre>
+		</figure>
+		</p>
+			Although a <code>xsd:nonNegativeInteger</code> in its <strong>canonical representation</strong> does <strong>not</strong> allow for a preceding plus sign (“+”) (U+002B).
+		</p>
+	</section>
+	<section>
+		<h1>Optioanl Leanding Zeros</h1>
+		<p>
+			Note that <code>xsd:nonNegativeInteger</code> allows an optional leading zeros (“0”) (U+0030).
+		</p>
+		<figure>
+			<pre></code>
+00000123
+			</code></pre>
+		</figure>
+		<p>
+			Although a <code>xsd:nonNegativeInteger</code> in its <strong>canonical representation</strong> does <strong>not</strong> allow for leading zeros (“0”) (U+0030).
+		</p>
+	</section>
+	<section>
+		<h1>No Maximum</h1>
+		<p>
+			Also note that <code>xsd:nonNegativeInteger</code> does <strong>not</strong> have an upper bound — does <strong>not</strong> have a maximum value.
+		</p>
+		<p>
+			Meaning, <code>xsd:nonNegativeInteger</code> can be larger than a <em>unsigned 64-bit integer</em> (<code>uint64</code>) can hold.
+			It can even larger than a
+			<em>unsigned 128-bit integer</em> (<code>uint128</code>),
+			<em>unsigned 256-bit integer</em> (<code>uint256</code>),
+			<em>unsigned 512-bit integer</em> (<code>uint512</code>),
+			<em>unsigned 1024-bit integer</em> (<code>uint1024</code>),
+			<em>unsigned 2048-bit integer</em> (<code>uint20248</code>),
+			etc, can hold.
+		</p>
+	</section>
 	<section>
 		<h1>Canonical Representation Example</h1>
 		<p>
