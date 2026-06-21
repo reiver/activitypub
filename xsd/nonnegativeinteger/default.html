@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" vocab="https://schema.org/" typeof="TechArticle" class="article">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/text-readability/readmode.css" />
+<title>xsd:nonNegativeInteger (ActivityPub guide)</title>
+<meta name="author" content="Charles Iliya Krempeaux" />
+</head>
+<body>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+	<ol>
+		<li><a href="/">Home</a></li>
+		<li><a href="../../">ActivityPub</a></li>
+		<li>Guide</li>
+		<li>XML Schema Definition</li>
+		<li><a href="./" aria-current="page">xsd:nonNegativeInteger</a></li>
+	</ol>
+</nav>
+
+<main>
+<article>
+	<header>
+		<hgroup>
+			<h1 property="headline">xsd:nonNegativeInteger</h1>
+			<p>
+				n ∈ ℕ<sub>0</sub>
+			</p>
+		</hgroup>
+		<p>
+			by <a href="https://reiver.link/">Charles Iliya Krempeaux</a>
+		</p>
+	</header>
+	<p>
+		Some <strong>ActivityPub</strong> properties have a type of <code>xsd:nonNegativeInteger</code>.
+		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integer</strong>.
+	</p>
+	<p>
+		Values for <code>xsd:nonNegativeInteger</code> look like this:
+	</p>
+	<ul>
+		<li>
+			<code>0</code>
+		</li>
+		<li>
+			<code>+0</code>
+		</li>
+		<li>
+			<code>1</code>
+		</li>
+		<li>
+			<code>+1</code>
+		</li>
+		<li>
+			<code>5</code>
+		</li>
+		<li>
+			<code>+5</code>
+		</li>
+		<li>
+			<code>123</code>
+		</li>
+		<li>
+			<code>+123</code>
+		</li>
+		<li>
+			<code>18731</code>
+		</li>
+		<li>
+			<code>+18731</code>
+		</li>
+		<li>
+			<code>18446744073709551615</code>
+		</li>
+		<li>
+			<code>+18446744073709551615</code>
+		</li>
+		<li>
+			<code>170141183460469231731687303715884105727</code>
+		</li>
+		<li>
+			<code>+170141183460469231731687303715884105727</code>
+		</li>
+	</ul>
+	<p>
+		Note that <code>xsd:nonNegativeInteger</code> allows an optional preceding plus sign (“+”) (U+002B).
+	</p>
+	<p>
+		Also note that <code>xsd:nonNegativeInteger</code> do <strong>not</strong> have an upper bound.
+		Meaning, <code>xsd:nonNegativeInteger</code> can be larger than a <em>unsigned 64-bit integer</em> (<code>uint64</code>) can hold.
+		It can even larger than a
+		<em>unsigned 128-bit integer</em> (<code>uint128</code>),
+		<em>unsigned 256-bit integer</em> (<code>uint256</code>),
+		<em>unsigned 512-bit integer</em> (<code>uint512</code>),
+		etc, can hold.
+	</p>
+	<section>
+		<h1>Specification</h1>
+		<p>
+			The specification where <code>xsd:nonNegativeInteger</code> is defined is at:
+		</p>
+		<ul>
+			<li>
+				<a target="_blank" href="https://www.w3.org/TR/xmlschema11-2/#nonNegativeInteger">https://www.w3.org/TR/xmlschema11-2/#nonNegativeInteger</a>
+			</li>
+		</ul>
+	</section>
+	<footer>
+		<include src="../../author.html" />
+		<include src="../../license.html" />
+	</footer>
+</article>
+</main>
+</body>
+</html>
