@@ -32,10 +32,10 @@
 	</header>
 	<p>
 		Some <strong>ActivityPub</strong> properties have a type of <code>xsd:nonNegativeInteger</code>.
-		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integer</strong>.
+		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integers</strong>.
 	</p>
 	<p>
-		Values for <code>xsd:nonNegativeInteger</code> look like this:
+		Values for <code>xsd:nonNegativeInteger</code> look like these:
 	</p>
 	<ul>
 		<li>
@@ -45,10 +45,34 @@
 			<code>+0</code>
 		</li>
 		<li>
+			<code>00</code>
+		</li>
+		<li>
+			<code>+00</code>
+		</li>
+		<li>
+			<code>00000</code>
+		</li>
+		<li>
+			<code>+00000</code>
+		</li>
+		<li>
 			<code>1</code>
 		</li>
 		<li>
 			<code>+1</code>
+		</li>
+		<li>
+			<code>01</code>
+		</li>
+		<li>
+			<code>+01</code>
+		</li>
+		<li>
+			<code>+00000000001</code>
+		</li>
+		<li>
+			<code>00000000001</code>
 		</li>
 		<li>
 			<code>5</code>
@@ -80,6 +104,12 @@
 		<li>
 			<code>+170141183460469231731687303715884105727</code>
 		</li>
+		<li>
+			<code>00000000000000000000170141183460469231731687303715884105727</code>
+		</li>
+		<li>
+			<code>+00000000000000000000170141183460469231731687303715884105727</code>
+		</li>
 	</ul>
 	<p>
 		Note that <code>xsd:nonNegativeInteger</code> allows an optional preceding plus sign (“+”) (U+002B).
@@ -93,6 +123,74 @@
 		<em>unsigned 512-bit integer</em> (<code>uint512</code>),
 		etc, can hold.
 	</p>
+	<section>
+		<h1>Canonical Representation</h1>
+		<p>
+			<code>xsd:nonNegativeInteger</code> has a concept of a <strong>canonical representation</strong>.
+		</p>
+		<p>
+			Some numbers can be represented in more than one way as a <code>xsd:nonNegativeInteger</code>.
+			For example, all of these represent the same number:
+		</p>
+		<ul>
+			<li>
+				<code>12345</code>
+			</li>
+			<li>
+				<code>012345</code>
+			</li>
+			<li>
+				<code>0012345</code>
+			</li>
+			<li>
+				<code>00012345</code>
+			</li>
+			<li>
+				<code>000012345</code>
+			</li>
+			<li>
+				<code>0000012345</code>
+			</li>
+			<li>
+				<code>00000012345</code>
+			</li>
+			<li>
+				<code>00000000000000000000000000000012345</code>
+			</li>
+			<li>
+				<code>+12345</code>
+			</li>
+			<li>
+				<code>+012345</code>
+			</li>
+			<li>
+				<code>+0012345</code>
+			</li>
+			<li>
+				<code>+00012345</code>
+			</li>
+			<li>
+				<code>+000012345</code>
+			</li>
+			<li>
+				<code>+0000012345</code>
+			</li>
+			<li>
+				<code>+00000012345</code>
+			</li>
+			<li>
+				<code>+00000000000000000000000000000012345</code>
+			</li>
+		</ul>
+		<p>
+			The <strong>canonical representation</strong> of all these is:
+		</p>
+		<ul>
+			<li>
+				<code>12345</code>
+			</li>
+		</ul>
+	</section>
 	<section>
 		<h1>Specification</h1>
 		<p>
