@@ -124,7 +124,7 @@
 		etc, can hold.
 	</p>
 	<section>
-		<h1>Canonical Representation</h1>
+		<h1>Canonical Representation Example</h1>
 		<p>
 			<code>xsd:nonNegativeInteger</code> has a concept of a <strong>canonical representation</strong>.
 		</p>
@@ -190,6 +190,168 @@
 				<code>12345</code>
 			</li>
 		</ul>
+	</section>
+	<section>
+		<h1>Canonical Representation</h1>
+		<p>
+			The <strong>canonical representation</strong> of an <code>xsd:nonNegativeInteger</code> has the following properties:
+		</p>
+		<ul>
+			<li>
+				Does not have optional preceding plus sign (“+”) (U+002B).
+			</li>
+			<li>
+				Does not have leading zeros.
+			</li>
+		</ul>
+	</section>
+	<section>
+		<h1>More Canonical Representation Examples</h1>
+		<p>
+			Here are more <code>xsd:nonNegativeInteger</code> <strong>canonical representation</strong> examples.
+		</p>
+		<table>
+			<thead>
+				<tr>
+					<th>
+						non-canonical
+					</th>
+					<th>
+						canonical
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<code>0</code>
+					</td>
+					<td>
+						<code>0</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>00</code>
+					</td>
+					<td>
+						<code>0</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>000</code>
+					</td>
+					<td>
+						<code>0</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>0000000000</code>
+					</td>
+					<td>
+						<code>0</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>+0</code>
+					</td>
+					<td>
+						<code>0</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>+00</code>
+					</td>
+					<td>
+						<code>0</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>+000</code>
+					</td>
+					<td>
+						<code>0</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>+0000000000</code>
+					</td>
+					<td>
+						<code>0</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>1</code>
+					</td>
+					<td>
+						<code>1</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>01</code>
+					</td>
+					<td>
+						<code>1</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>001</code>
+					</td>
+					<td>
+						<code>1</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>0000000001</code>
+					</td>
+					<td>
+						<code>1</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>+1</code>
+					</td>
+					<td>
+						<code>1</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>+01</code>
+					</td>
+					<td>
+						<code>1</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>+001</code>
+					</td>
+					<td>
+						<code>1</code>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<code>+0000000001</code>
+					</td>
+					<td>
+						<code>1</code>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</section>
 	<section>
 		<h1>Specification</h1>
