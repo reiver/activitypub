@@ -264,46 +264,60 @@
 				</li>
 			</ul>
 		</section>
-		<p>
-			And, another:
-		</p>
-		<ul>
-			<li>
-				<code>18446744073709551615</code>
-			</li>
-			<li>
-				<code>0000000000018446744073709551615</code>
-			</li>
-			<li>
-				<code>+18446744073709551615</code>
-			</li>
-			<li>
-				<code>+0000000000018446744073709551615</code>
-			</li>
-		</ul>
-		<p>
-			And, another:
-		</p>
-		<ul>
-			<li>
-				<code>170141183460469231731687303715884105727</code>
-			</li>
-			<li>
-				<code>00170141183460469231731687303715884105727</code>
-			</li>
-			<li>
-				<code>000000000000000000170141183460469231731687303715884105727</code>
-			</li>
-			<li>
-				<code>+170141183460469231731687303715884105727</code>
-			</li>
-			<li>
-				<code>+00170141183460469231731687303715884105727</code>
-			</li>
-			<li>
-				<code>+000000000000000000170141183460469231731687303715884105727</code>
-			</li>
-		</ul>
+		<section>
+			<h1>Example: Multiple Representations of 18446744073709551615</h1>
+			<p>
+				And, another:
+			</p>
+			<ul>
+				<li>
+					<code>18446744073709551615</code>
+				</li>
+				<li>
+					<code>0000000000018446744073709551615</code>
+				</li>
+				<li>
+					<code>+18446744073709551615</code>
+				</li>
+				<li>
+					<code>+0000000000018446744073709551615</code>
+				</li>
+			</ul>
+			<p>
+				For this particular example, the <code>xsd:nonNegativeInteger</code> <strong>canonical representation</strong> is <code></code> (as you probably expected):
+			</p>
+			<ul>
+				<li>
+					<code>18446744073709551615</code>
+				</li>
+			</ul>
+		</section>
+		<section>
+			<h1>Example: Multiple Representations of 170141183460469231731687303715884105727</h1>
+			<p>
+				And, another:
+			</p>
+			<ul>
+				<li>
+					<code>170141183460469231731687303715884105727</code>
+				</li>
+				<li>
+					<code>00170141183460469231731687303715884105727</code>
+				</li>
+				<li>
+					<code>000000000000000000170141183460469231731687303715884105727</code>
+				</li>
+				<li>
+					<code>+170141183460469231731687303715884105727</code>
+				</li>
+				<li>
+					<code>+00170141183460469231731687303715884105727</code>
+				</li>
+				<li>
+					<code>+000000000000000000170141183460469231731687303715884105727</code>
+				</li>
+			</ul>
+		</section>
 	</section>
 	<section>
 		<h1>Optional Preceding Plus Sign</h1>
@@ -322,7 +336,9 @@
 	<section>
 		<h1>Optioanl Leanding Zeros</h1>
 		<p>
-			Note that <code>xsd:nonNegativeInteger</code> allows an optional leading zeros (“0”) (U+0030).
+			Here is one quirk of <code>xsd:nonNegativeInteger</code>
+			—
+			<code>xsd:nonNegativeInteger</code> allows an optional leading zeros (“0”) (U+0030).
 		</p>
 		<figure>
 			<pre></code>
