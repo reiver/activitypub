@@ -35,7 +35,10 @@
 		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integers</strong>.
 	</p>
 	<p>
-		Values for <code>xsd:nonNegativeInteger</code> look like these:
+		Although note that <code>xsd:nonNegativeInteger</code> has some quirks.
+	</p>
+	<p>
+		For example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>zero</strong> (0):
 	</p>
 	<ul>
 		<li>
@@ -51,11 +54,28 @@
 			<code>+00</code>
 		</li>
 		<li>
+			<code>000</code>
+		</li>
+		<li>
+			<code>+000</code>
+		</li>
+		<li>
+			<code>0000</code>
+		</li>
+		<li>
+			<code>+0000</code>
+		</li>
+		<li>
 			<code>00000</code>
 		</li>
 		<li>
 			<code>+00000</code>
 		</li>
+	</ul>
+	<p>
+		And, for example, all of these values are valid values for <code>xsd:nonNegativeInteger</code> for the number <strong>one</strong> (1):
+	</p>
+	<ul>
 		<li>
 			<code>1</code>
 		</li>
@@ -74,6 +94,17 @@
 		<li>
 			<code>+00000000001</code>
 		</li>
+		<li>
+			<code>000000000000000000001</code>
+		</li>
+		<li>
+			<code>+000000000000000000001</code>
+		</li>
+	</ul>
+	<p>
+		And also, for example, these are more valid values for <code>xsd:nonNegativeInteger</code>:
+	</p>
+	<ul>
 		<li>
 			<code>5</code>
 		</li>
