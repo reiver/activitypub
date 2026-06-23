@@ -84,6 +84,12 @@
   &lt;body&gt;
 &lt;/html&gt;
 		</code></pre>
+		<figcaption>
+			This is RDFa for a fictitious ActivityPub actor's outbox.
+			Note the <code>"totalItems"</code> field.
+			From an ActivitiyPub point of view, the type of <code>"totalItems"</code> is <code>xsd:nonNegativeInteger</code>.
+			That means that, even though HTML would allow any value for <code>"totalItems"</code> (for example <code>-7</code> or <code>banana</code> or <code>♠♥♣♦</code>) ActivityPub does not.
+		</figcaption>
 	</figure>
 	<p>
 		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integers</strong>.
