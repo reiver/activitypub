@@ -74,11 +74,28 @@
 		</li>
 	</ul>
 	<p>
-		So, <code>xsd:nonNegativeInteger</code> includes thing you probably expect.
-		But also some things while correct from a <em>mathematical radix representation</em> point of view, might not be things you expect.
+		So, <code>xsd:nonNegativeInteger</code> includes things you probably expect
+		—
+		such as <code>0</code>, <code>5</code>, and <code>123</code>.
 	</p>
 	<p>
-		<code>xsd:nonNegativeInteger</code> has some quirks — from the point of view of someone who is used to working with <em>64-bit unsigned integers</em>, or <em>2048-bit unsigned integers</em>, or whatever.
+		But <code>xsd:nonNegativeInteger</code> also includes some things that while are correct from a <em>mathematical radix representation</em> point of view, may be things that you might not expect
+		—
+		such as <code>0000</code>, <code>+5</code>, <code>0000123</code>, and <code>+00005678</code>.
+	</p>
+	<p>
+		And then there is:
+		<code>170141183460469231731687303715884105727</code>.
+		Which, at first sight might be something you expect, but — some might notice that it is much biggest than the largest unsigned 64-bit integer.
+		I.e., <code>170141183460469231731687303715884105727</code> is bigger than:
+	</p>
+	<figure>
+		<pre><code>
+2<sup>64</sup> - 1 = 18446744073709551615
+		</cod></pre>
+	</figure>
+	<p>
+		So, <code>xsd:nonNegativeInteger</code> has some quirks — from the point of view of someone who is used to working with <em>64-bit unsigned integers</em>, or <em>2048-bit unsigned integers</em>, or whatever.
 		These quirks would affect how you represent, store, parse, and validate a <code>xsd:nonNegativeInteger</code>.
 	</p>
 	<p>
