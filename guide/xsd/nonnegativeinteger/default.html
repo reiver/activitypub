@@ -114,6 +114,10 @@
 		These quirks would affect how you represent, store, parse, and validate a <code>xsd:nonNegativeInteger</code>.
 	</p>
 	<p>
+		That means that technically, you should <strong>NOT</strong> store these are a <em>64-bit unsigned integers</em>.
+		(In <abbr title="Go programming language">Golang</abbr>, the built-in type for a <em>64-bit unsigned integer</em> is <code>uint64</code> — but don't use that.)
+	</p>
+	<p>
 		Here is a short-list of things to keep in mind:
 	</p>
 	<ul>
