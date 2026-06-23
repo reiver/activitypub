@@ -53,9 +53,10 @@
 }
 		</code></pre>
 		<figcaption>
-			This is the JSON-LD for an ActivityPub actor's outbox.
-			Note the <code>"totalItems"</code>.
-			The type of <code>"totalItems"</code> is <code>xsd:nonNegativeInteger</code>.
+			This is JSON-LD for a fictitious ActivityPub actor's outbox.
+			Note the <code>"totalItems"</code> field.
+			From an ActivitiyPub point of view, the type of <code>"totalItems"</code> is <code>xsd:nonNegativeInteger</code>.
+			That means that, even though JSON would allow negative values for <code>"totalItems"</code> (for example <code>-7</code>) ActivityPub does not.
 		</figcaption>
 	</figure>
 	<p>
