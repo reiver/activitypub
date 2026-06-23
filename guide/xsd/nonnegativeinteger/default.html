@@ -32,12 +32,329 @@
 	</header>
 	<p>
 		Some <strong>ActivityPub</strong> properties have a type of <code>xsd:nonNegativeInteger</code>.
-		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integers</strong>.
+		For example:
+		<code>height</code>,
+		<code>startIndex</code>,
+		<code>totalItems</code>,
+		<code>width</code>.
 	</p>
 	<p>
-		Although note that <code>xsd:nonNegativeInteger</code> has some quirks — from the point of view of someone who is used to working with <em>64-bit unsigned integers</em>, or <em>2048-bit unsigned integers</em>, or whatever.
+		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integers</strong>.
+		I.e., these:
+	</p>
+	<ul>
+		<li>
+			<code>0</code>
+		</li>
+		<li>
+			<code>5</code>
+		</li>
+		<li>
+			<code>123</code>
+		</li>
+		<li>
+			<code>170141183460469231731687303715884105727</code>
+		</li>
+	</ul>
+	<p>
+		But also these,too:
+	</p>
+	<ul>
+		<li>
+			<code>0000</code>
+		</li>
+		<li>
+			<code>+5</code>
+		</li>
+		<li>
+			<code>0000123</code>
+		</li>
+		<li>
+			<code>+00005678</code>
+		</li>
+	</ul>
+	<p>
+		So, <code>xsd:nonNegativeInteger</code> includes thing you probably expect.
+		But also some things while correct from a <em>mathematical radix representation</em> point of view, might not be things you expect.
+	</p>
+	<p>
+		<code>xsd:nonNegativeInteger</code> has some quirks — from the point of view of someone who is used to working with <em>64-bit unsigned integers</em>, or <em>2048-bit unsigned integers</em>, or whatever.
 		These quirks would affect how you represent, store, parse, and validate a <code>xsd:nonNegativeInteger</code>.
 	</p>
+	<p>
+		Here is a short-list of things to keep in mind:
+	</p>
+	<ul>
+		<li>
+			<p>
+				There is an optional preceding plus sign (“+”) (U+002B).
+			</p>
+			<p>
+				So, these are both the same non-negative number (five):
+			</p>
+			<ul>
+				<li>
+					<code>5</code>
+				</li>
+				<li>
+					<code>+5</code>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p>
+				There are optional leading zeros (“0”) (U+0030).
+			</p>
+			<p>
+				So, these are all the same non-negative number (five):
+			</p>
+			<ul>
+				<li>
+					<code>5</code>
+				</li>
+				<li>
+					<code>05</code>
+				</li>
+				<li>
+					<code>005</code>
+				</li>
+				<li>
+					<code>0005</code>
+				</li>
+				<li>
+					<code>00005</code>
+				</li>
+				<li>
+					<code>+5</code>
+				</li>
+				<li>
+					<code>+05</code>
+				</li>
+				<li>
+					<code>+005</code>
+				</li>
+				<li>
+					<code>+0005</code>
+				</li>
+				<li>
+					<code>+00005</code>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p>
+				You may have already noticed this but, it is worth saying it explicitly —
+			</p>
+			<p>
+				Each non-negative number has more than one <code>xsd:nonNegativeInteger</code> representation.
+			</p>
+			<p>
+				So, again, these are all the same non-negative number (five):
+			</p>
+			<ul>
+				<li>
+					<code>5</code>
+				</li>
+				<li>
+					<code>05</code>
+				</li>
+				<li>
+					<code>005</code>
+				</li>
+				<li>
+					<code>0005</code>
+				</li>
+				<li>
+					<code>00005</code>
+				</li>
+				<li>
+					<code>000005</code>
+				</li>
+				<li>
+					<code>0000005</code>
+				</li>
+				<li>
+					<code>+5</code>
+				</li>
+				<li>
+					<code>+05</code>
+				</li>
+				<li>
+					<code>+005</code>
+				</li>
+				<li>
+					<code>+0005</code>
+				</li>
+				<li>
+					<code>+00005</code>
+				</li>
+				<li>
+					<code>+000005</code>
+				</li>
+				<li>
+					<code>+0000005</code>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p>
+				You may have also already noticed this but, it is also worth saying it explicitly —
+			</p>
+			<p>
+				Each non-negative number has an <em>infinite</em> number of <code>xsd:nonNegativeInteger</code> representations.
+			</p>
+			<p>
+				And, again, these are all the same non-negative number (five):
+			</p>
+			<ul>
+				<li>
+					<code>5</code>
+				</li>
+				<li>
+					<code>05</code>
+				</li>
+				<li>
+					<code>005</code>
+				</li>
+				<li>
+					<code>0005</code>
+				</li>
+				<li>
+					<code>00005</code>
+				</li>
+				<li>
+					<code>000005</code>
+				</li>
+				<li>
+					<code>0000005</code>
+				</li>
+				<li>
+					<code>00000005</code>
+				</li>
+				<li>
+					…
+				</li>
+				<li>
+					<code>000000000000000000000000005</code>
+				</li>
+				<li>
+					…
+				</li>
+				<li>
+					<code>+5</code>
+				</li>
+				<li>
+					<code>+05</code>
+				</li>
+				<li>
+					<code>+005</code>
+				</li>
+				<li>
+					<code>+0005</code>
+				</li>
+				<li>
+					<code>+00005</code>
+				</li>
+				<li>
+					<code>+000005</code>
+				</li>
+				<li>
+					<code>+0000005</code>
+				</li>
+				<li>
+					<code>+00000005</code>
+				</li>
+				<li>
+					…
+				</li>
+				<li>
+					<code>+000000000000000000000000005</code>
+				</li>
+				<li>
+					…
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p>
+				Even though there are an infinite number of <code>xsd:nonNegativeInteger</code> representations for every non-negative number, there is <ul>only one</ul> <code>xsd:nonNegativeInteger</code> <strong><u>canonical</u> representation</strong> for each non-negative number.
+			</p>
+			<p>
+				The <strong>canonical</strong> representation for all of the following <code>xsd:nonNegativeInteger</code> representations is <code>5</code>
+			</p>
+			<ul>
+				<li>
+					<code>5</code>
+				</li>
+				<li>
+					<code>05</code>
+				</li>
+				<li>
+					<code>005</code>
+				</li>
+				<li>
+					<code>0005</code>
+				</li>
+				<li>
+					<code>00005</code>
+				</li>
+				<li>
+					<code>000005</code>
+				</li>
+				<li>
+					<code>0000005</code>
+				</li>
+				<li>
+					<code>00000005</code>
+				</li>
+				<li>
+					…
+				</li>
+				<li>
+					<code>000000000000000000000000005</code>
+				</li>
+				<li>
+					…
+				</li>
+				<li>
+					<code>+5</code>
+				</li>
+				<li>
+					<code>+05</code>
+				</li>
+				<li>
+					<code>+005</code>
+				</li>
+				<li>
+					<code>+0005</code>
+				</li>
+				<li>
+					<code>+00005</code>
+				</li>
+				<li>
+					<code>+000005</code>
+				</li>
+				<li>
+					<code>+0000005</code>
+				</li>
+				<li>
+					<code>+00000005</code>
+				</li>
+				<li>
+					…
+				</li>
+				<li>
+					<code>+000000000000000000000000005</code>
+				</li>
+				<li>
+					…
+				</li>
+			</ul>
+		</li>
+		<li>
+			There is no biggest <code>xsd:nonNegativeInteger</code>.
+		</li>
+	</ul>
 	<section>
 		<h1>Multiple Representations</h1>
 		<p>
