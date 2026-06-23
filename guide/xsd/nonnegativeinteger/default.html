@@ -39,7 +39,7 @@
 		<code>width</code>.
 	</p>
 	<p>
-		For example, you may have seen <strong>ActivityPub</strong such as the following:
+		For example, you may have seen <strong>ActivityPub</strong> JSON-LD such as the following:
 	</p>
 	<figure>
 		<pre><code>
@@ -58,6 +58,30 @@
 			From an ActivitiyPub point of view, the type of <code>"totalItems"</code> is <code>xsd:nonNegativeInteger</code>.
 			That means that, even though JSON would allow negative values for <code>"totalItems"</code> (for example <code>-7</code>) ActivityPub does not.
 		</figcaption>
+	</figure>
+	<p>
+		Or, for example, you may have seen <strong>ActivityPub</strong> RDFa such as the following:
+	</p>
+	<figure>
+		<pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" prefix="as: https://www.w3.org/ns/activitystreams#" typeof="as:OrderedCollection"&gt;
+  &lt;head&gt;
+    &lt;meta property="as:id" content="https://example.com/-/social/outbox" /&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+
+    &lt;p&gt;
+      The number of items is: &lt;span property="totalItems"&gt;28191&lt;/span&gt;.
+    &lt;/p&gt;
+
+    &lt;a property="as:first" href="https://mastodon.social/-/social/outbox/2820"&lt;first page&lt;/a&gt;
+
+    &lt;a property="as:last"  href="https://mastodon.social/-/social/outbox/1"&lt;last page&lt;/a&gt;
+  &lt;body&gt;
+&lt;/html&gt;
+		</code></pre>
 	</figure>
 	<p>
 		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integers</strong>.
