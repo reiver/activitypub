@@ -99,7 +99,7 @@
 		such as <code>0</code>, <code>5</code>, and <code>123</code>.
 	</p>
 	<p>
-		But, <code>xsd:nonNegativeInteger</code> also includes some things that while are correct from a <em>mathematical radix representation</em> point of view, may be things that you might not expect
+		But, <code>xsd:nonNegativeInteger</code> also includes some things that, while are correct from a <em>mathematical radix representation</em> point of view, may be things that you might not expect
 		—
 		such as <code>0000</code>, <code>+5</code>, <code>0000123</code>, and <code>+00005678</code>.
 	</p>
@@ -122,7 +122,7 @@
 		These quirks would affect how you represent, store, parse, and validate a <code>xsd:nonNegativeInteger</code>.
 	</p>
 	<p>
-		That means that technically, you should <strong>NOT</strong> store these are a <em>64-bit unsigned integers</em>.
+		That means that technically, you should <strong>NOT</strong> store <code>xsd:nonNegativeInteger</code> in <em>64-bit unsigned integers</em>.
 		(In <abbr title="Go programming language">Golang</abbr>, the built-in type for a <em>64-bit unsigned integer</em> is <code>uint64</code> — but don't use that.)
 	</p>
 	<p>
@@ -321,7 +321,7 @@
 		</li>
 		<li>
 			<p>
-				<mark>Even though there are an infinite number of <code>xsd:nonNegativeInteger</code> representations for every non-negative number, there is <ul>only one</ul> <code>xsd:nonNegativeInteger</code> <strong><u>canonical</u> representation</strong> for each non-negative number.</mark>
+				<mark>Even though there are an infinite number of <code>xsd:nonNegativeInteger</code> representations for every non-negative number, there is <u>only one</u> <code>xsd:nonNegativeInteger</code> <strong><u>canonical</u> representation</strong> for each non-negative number.</mark>
 			</p>
 			<p>
 				The <strong>canonical</strong> representation for all of the following <code>xsd:nonNegativeInteger</code> representations is <code>5</code>
