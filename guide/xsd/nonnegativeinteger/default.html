@@ -126,6 +126,16 @@
 		(In <abbr title="Go programming language">Golang</abbr>, the built-in type for a <em>64-bit unsigned integer</em> is <code>uint64</code> — but don't use that.)
 	</p>
 	<p>
+		(Although practically, you might not ever see a number larger than 18,446,744,073,709,551,615 = 2<sup>64</sup> - 1.
+		So, although it is technically incorrect "wrong" to store a <code>xsd:nonNegativeInteger</code> in a <em>64-bit unsigned integers</em>, you might be able to get away with it.
+		But, it you do that, you should validate and do error check in case you get an overflow.)
+	</p>
+	<p>
+		If you want to be technically correct, you should either store the <code>xsd:nonNegativeInteger</code> as a raw string, or store it a variable length (big) integer.
+		(In <abbr title="Go programming language">Golang</abbr>, there is the <a href="https://pkg.go.dev/math/big#Int">big.Int</a> type that could be used.
+		Althogh you could also create something yourself from scatch.)
+	</p>
+	<p>
 		Here is a short-list of things to keep in mind:
 	</p>
 	<ul>
