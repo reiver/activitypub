@@ -39,8 +39,23 @@
 		<code>width</code>.
 	</p>
 	<p>
+		For example, you may have seen <strong>ActivityPub</strong such as the following:
+	</p>
+	<figure>
+		<pre><code>
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "https://example.com/-/social/outbox",
+  "type": "OrderedCollection",
+  "totalItems": 28191,
+  "first": "https://mastodon.social/-/social/outbox/2820",
+  "last": "https://mastodon.social/-/social/outbox/1"
+}
+		</code></pre>
+	</figure>
+	<p>
 		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integers</strong>.
-		I.e., these:
+		I.e., here are some <code>xsd:nonNegativeInteger</code>:
 	</p>
 	<ul>
 		<li>
@@ -57,7 +72,7 @@
 		</li>
 	</ul>
 	<p>
-		But also these, too:
+		But also these, too, are also some <code>xsd:nonNegativeInteger</code>:
 	</p>
 	<ul>
 		<li>
