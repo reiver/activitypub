@@ -52,6 +52,11 @@
   "last": "https://mastodon.social/-/social/outbox/1"
 }
 		</code></pre>
+		<figcaption>
+			This is the JSON-LD for an ActivityPub actor's outbox.
+			Note the <code>"totalItems"</code>.
+			The type of <code>"totalItems"</code> is <code>xsd:nonNegativeInteger</code>.
+		</figcaption>
 	</figure>
 	<p>
 		As the name suggests, <code>xsd:nonNegativeInteger</code> represents <strong>a non-negative integers</strong>.
@@ -108,6 +113,9 @@
 		<pre><code>
 2<sup>64</sup> - 1 = 18446744073709551615
 		</code></pre>
+		<figcaption>
+			This is the largest number a <em>64-bit unsigned integer</em> can represent.
+		</figcaption>
 	</figure>
 	<p>
 		So, <code>xsd:nonNegativeInteger</code> has some quirks — from the point of view of someone who is used to working with <em>64-bit unsigned integers</em>, or <em>2048-bit unsigned integers</em>, or whatever.
