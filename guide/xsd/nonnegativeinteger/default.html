@@ -47,7 +47,7 @@
 	<section>
 		<h1>Example in JSON-LD</h1>
 		<p>
-			For example, you may have seen <strong>ActivityPub</strong> JSON-LD such as the following:
+			Here is an example of <strong>ActivityPub</strong> JSON-LD:
 		</p>
 		<figure>
 			<pre><code>
@@ -72,14 +72,25 @@
 			—
 			according to <strong>ActivityPub</strong>, it is of type <code>xsd:nonNegativeInteger</code>.
 		</p>
+	</section>
+	<section>
+		<h1>Expected in JSON-LD</h1>
 		<p>
-			That means you should expect the value to be either JSON <strong>non-negative integers</strong> (<code>0</code>, <code>1</code>, <code>2</code>, …) or a JSON <strong><code>null</code></strong>.
+			That means you should expect the value to be either:
 		</p>
+		<ul>
+			<li>
+				JSON <strong>non-negative integers</strong> (<code>0</code>, <code>1</code>, <code>2</code>, …), or
+			</li>
+			<li>
+				a JSON <strong><code>null</code></strong>.
+			</li>
+		</ul>
 	</section>
 	<section>
 		<h1>Example in RDFa</h1>
 		<p>
-			Or, for example, you may have seen <strong>ActivityPub</strong> RDFa such as the following:
+			Here is an example of <strong>ActivityPub</strong> RDFa in HTML:
 		</p>
 		<figure>
 			<pre><code>
@@ -115,6 +126,26 @@
 			—
 			according to <strong>ActivityPub</strong>, it is of type <code>xsd:nonNegativeInteger</code>.
 		</p>
+	</section>
+	<section>
+		<h1>Expected in RDFa</h1>
+		<p>
+			That means you should expect the value to be either:
+		</p>
+		<ul>
+			<li>
+				<strong>non-negative integers</strong> in <strong>canonical form</strong> (<code>0</code>, <code>1</code>, <code>2</code>, …), or
+			</li>
+			<li>
+				<strong>non-negative integers</strong> <u>almost</u> in <strong>canonical form</strong> but with the (optional) plus sign (“+”) (U+002B) at the beginning (<code>+0</code>, <code>+1</code>, <code>+2</code>, …), or
+			</li>
+			<li>
+				<strong>non-negative integers</strong> with leading zeros (“0”) (U+0030) at the beginning, or
+			</li>
+			<li>
+				<strong>non-negative integers</strong> with the (optional) plus sign (“+”) (U+002B) at the beginning and after that with leading zeros (“0”) (U+0030) at the beginning.
+			</li>
+		</ul>
 	</section>
 	<section>
 		<h1>Expected <code>xsd:nonNegativeInteger</code></h1>
